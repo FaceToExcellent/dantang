@@ -74,6 +74,7 @@
 		604E27941D7D2B7800997864 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 604E27561D7D2B7800997864 /* LICENSE */; };
 		604E27951D7D2B7800997864 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 604E27571D7D2B7800997864 /* README.md */; };
 		604E27961D7D2B7800997864 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604E27591D7D2B7800997864 /* SwiftyJSON.swift */; };
+		604E27991D7D2D5400997864 /* YZTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604E27981D7D2D5400997864 /* YZTabbarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -152,6 +153,7 @@
 		604E27561D7D2B7800997864 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		604E27571D7D2B7800997864 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		604E27591D7D2B7800997864 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		604E27981D7D2D5400997864 /* YZTabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZTabbarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 		604E26E81D7D279800997864 /* dantang */ = {
 			isa = PBXGroup;
 			children = (
+				604E27971D7D2C2500997864 /* main */,
 				604E27081D7D2B3D00997864 /* 类库 */,
 				604E27071D7D2ACE00997864 /* other */,
 				604E27061D7D2AAC00997864 /* 我(me) */,
@@ -406,6 +409,14 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
+		604E27971D7D2C2500997864 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				604E27981D7D2D5400997864 /* YZTabbarViewController.swift */,
+			);
+			name = main;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -499,6 +510,7 @@
 				604E27691D7D2B7800997864 /* Stream.swift in Sources */,
 				604E278E1D7D2B7800997864 /* README.md in Sources */,
 				604E26FC1D7D27EE00997864 /* ROOTViewController.swift in Sources */,
+				604E27991D7D2D5400997864 /* YZTabbarViewController.swift in Sources */,
 				604E27921D7D2B7800997864 /* SVProgressHUD.m in Sources */,
 				604E27711D7D2B7800997864 /* README.md in Sources */,
 				604E27661D7D2B7800997864 /* ResponseSerialization.swift in Sources */,
