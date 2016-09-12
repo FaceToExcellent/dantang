@@ -13,8 +13,8 @@ class YZNAVViewController: UINavigationController {
         super.viewDidLoad()
         
       let navBar  = UINavigationBar.appearance()
-     navBar.barTintColor = UIColor.redColor()
-     navBar.tintColor = UIColor.whiteColor()
+     navBar.barTintColor = UIColor.whiteColor()
+     navBar.tintColor = UIColor.blackColor()
 //        navBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor(),NSForegroundColorAttributeName:UIFont.systemFontOfSize(20)]
         
     }

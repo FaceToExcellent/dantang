@@ -12,6 +12,12 @@
 		6041A7FB1D86878C008ACDCF /* YZProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041A7FA1D86878C008ACDCF /* YZProductViewController.swift */; };
 		6041A7FD1D8687AA008ACDCF /* YZDanTangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041A7FC1D8687AA008ACDCF /* YZDanTangViewController.swift */; };
 		6041A7FF1D86895D008ACDCF /* YZNAVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041A7FE1D86895D008ACDCF /* YZNAVViewController.swift */; };
+		6041A8011D869479008ACDCF /* YZConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041A8001D869479008ACDCF /* YZConst.swift */; };
+		6041A8091D86954F008ACDCF /* APESuperHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041A8041D86954F008ACDCF /* APESuperHUD.swift */; };
+		6041A80A1D86954F008ACDCF /* HudAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041A8051D86954F008ACDCF /* HudAppearance.swift */; };
+		6041A80B1D86954F008ACDCF /* HudUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041A8061D86954F008ACDCF /* HudUtilities.swift */; };
+		6041A80C1D86954F008ACDCF /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041A8071D86954F008ACDCF /* HudView.swift */; };
+		6041A80D1D86954F008ACDCF /* LoadingMessagesHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041A8081D86954F008ACDCF /* LoadingMessagesHandler.swift */; };
 		604E26EA1D7D279800997864 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604E26E91D7D279800997864 /* AppDelegate.swift */; };
 		604E26F11D7D279800997864 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 604E26F01D7D279800997864 /* Assets.xcassets */; };
 		604E26FC1D7D27EE00997864 /* ROOTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604E26FB1D7D27EE00997864 /* ROOTViewController.swift */; };
@@ -81,6 +87,13 @@
 		6041A7FA1D86878C008ACDCF /* YZProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZProductViewController.swift; sourceTree = "<group>"; };
 		6041A7FC1D8687AA008ACDCF /* YZDanTangViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZDanTangViewController.swift; sourceTree = "<group>"; };
 		6041A7FE1D86895D008ACDCF /* YZNAVViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZNAVViewController.swift; sourceTree = "<group>"; };
+		6041A8001D869479008ACDCF /* YZConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZConst.swift; sourceTree = "<group>"; };
+		6041A8031D86954F008ACDCF /* APESuperHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APESuperHUD.h; sourceTree = "<group>"; };
+		6041A8041D86954F008ACDCF /* APESuperHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APESuperHUD.swift; sourceTree = "<group>"; };
+		6041A8051D86954F008ACDCF /* HudAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HudAppearance.swift; sourceTree = "<group>"; };
+		6041A8061D86954F008ACDCF /* HudUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HudUtilities.swift; sourceTree = "<group>"; };
+		6041A8071D86954F008ACDCF /* HudView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HudView.swift; sourceTree = "<group>"; };
+		6041A8081D86954F008ACDCF /* LoadingMessagesHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingMessagesHandler.swift; sourceTree = "<group>"; };
 		604E26E61D7D279800997864 /* dantang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dantang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		604E26E91D7D279800997864 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		604E26F01D7D279800997864 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -159,6 +172,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6041A8021D86954F008ACDCF /* APESuperHUD */ = {
+			isa = PBXGroup;
+			children = (
+				6041A8031D86954F008ACDCF /* APESuperHUD.h */,
+				6041A8041D86954F008ACDCF /* APESuperHUD.swift */,
+				6041A8051D86954F008ACDCF /* HudAppearance.swift */,
+				6041A8061D86954F008ACDCF /* HudUtilities.swift */,
+				6041A8071D86954F008ACDCF /* HudView.swift */,
+				6041A8081D86954F008ACDCF /* LoadingMessagesHandler.swift */,
+			);
+			name = APESuperHUD;
+			path = Source;
+			sourceTree = "<group>";
+		};
 		604E26DD1D7D279800997864 = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +265,7 @@
 		604E27081D7D2B3D00997864 /* 类库 */ = {
 			isa = PBXGroup;
 			children = (
+				6041A8021D86954F008ACDCF /* APESuperHUD */,
 				604E270B1D7D2B7800997864 /* Alamofire */,
 				604E27201D7D2B7800997864 /* FDFullscreenPopGesture */,
 				604E27261D7D2B7800997864 /* Kingfisher */,
@@ -383,6 +411,7 @@
 			children = (
 				604E27981D7D2D5400997864 /* YZTabbarViewController.swift */,
 				6041A7FE1D86895D008ACDCF /* YZNAVViewController.swift */,
+				6041A8001D869479008ACDCF /* YZConst.swift */,
 			);
 			name = main;
 			sourceTree = "<group>";
@@ -470,6 +499,7 @@
 				6041A7FB1D86878C008ACDCF /* YZProductViewController.swift in Sources */,
 				604E27621D7D2B7800997864 /* Notifications.swift in Sources */,
 				604E27641D7D2B7800997864 /* Request.swift in Sources */,
+				6041A8011D869479008ACDCF /* YZConst.swift in Sources */,
 				604E27861D7D2B7800997864 /* ConstraintRelation.swift in Sources */,
 				604E277B1D7D2B7800997864 /* Resource.swift in Sources */,
 				604E275B1D7D2B7800997864 /* README.md in Sources */,
@@ -487,8 +517,10 @@
 				604E27961D7D2B7800997864 /* SwiftyJSON.swift in Sources */,
 				604E27601D7D2B7800997864 /* MultipartFormData.swift in Sources */,
 				604E27651D7D2B7800997864 /* Response.swift in Sources */,
+				6041A80C1D86954F008ACDCF /* HudView.swift in Sources */,
 				604E27741D7D2B7800997864 /* ImageCache.swift in Sources */,
 				604E276D1D7D2B7800997864 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
+				6041A8091D86954F008ACDCF /* APESuperHUD.swift in Sources */,
 				604E27751D7D2B7800997864 /* ImageDownloader.swift in Sources */,
 				604E27631D7D2B7800997864 /* ParameterEncoding.swift in Sources */,
 				604E275C1D7D2B7800997864 /* Alamofire.swift in Sources */,
@@ -499,6 +531,7 @@
 				604E27681D7D2B7800997864 /* ServerTrustPolicy.swift in Sources */,
 				604E27871D7D2B7800997864 /* Debugging.swift in Sources */,
 				604E27821D7D2B7800997864 /* ConstraintAttributes.swift in Sources */,
+				6041A80D1D86954F008ACDCF /* LoadingMessagesHandler.swift in Sources */,
 				604E278B1D7D2B7800997864 /* View+SnapKit.swift in Sources */,
 				604E26EA1D7D279800997864 /* AppDelegate.swift in Sources */,
 				604E278A1D7D2B7800997864 /* SnapKit.swift in Sources */,
@@ -509,6 +542,7 @@
 				6041A7FF1D86895D008ACDCF /* YZNAVViewController.swift in Sources */,
 				604E277A1D7D2B7800997864 /* KingfisherOptionsInfo.swift in Sources */,
 				604E27951D7D2B7800997864 /* README.md in Sources */,
+				6041A80A1D86954F008ACDCF /* HudAppearance.swift in Sources */,
 				604E276C1D7D2B7800997864 /* Validation.swift in Sources */,
 				604E27801D7D2B7800997864 /* README.md in Sources */,
 				604E276F1D7D2B7800997864 /* README.md in Sources */,
@@ -516,6 +550,7 @@
 				604E27891D7D2B7800997864 /* LayoutConstraint.swift in Sources */,
 				604E277D1D7D2B7800997864 /* ThreadHelper.swift in Sources */,
 				604E27791D7D2B7800997864 /* KingfisherManager.swift in Sources */,
+				6041A80B1D86954F008ACDCF /* HudUtilities.swift in Sources */,
 				604E275D1D7D2B7800997864 /* Download.swift in Sources */,
 				604E27731D7D2B7800997864 /* Image.swift in Sources */,
 				604E27811D7D2B7800997864 /* Constraint.swift in Sources */,
