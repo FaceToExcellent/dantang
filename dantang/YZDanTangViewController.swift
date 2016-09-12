@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 class YZDanTangViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -26,6 +25,29 @@ class YZDanTangViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+    
+    //下载数据
+    func loadData(){
+        
+      
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     override func shouldAutorotate() -> Bool {
         return false
     }
@@ -36,14 +58,6 @@ class YZDanTangViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+  
 
 }

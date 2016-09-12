@@ -32,6 +32,8 @@ class YZNAVViewController: UINavigationController {
 //        if SVProgressHUD.isVisible() {
 //            SVProgressHUD.dismiss()
 //        }
+        
+        
         if UIApplication.sharedApplication().networkActivityIndicatorVisible {
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         }
