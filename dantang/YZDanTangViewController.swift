@@ -7,21 +7,14 @@
 //
 
 import UIKit
-class YZDanTangViewController: UIViewController {
+import Alamofire
+class YZDanTangViewController: ROOTViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
  self.view.backgroundColor = UIColor.purpleColor()
         
-  self.edgesForExtendedLayout = UIRectEdge.None
-  
-    self.extendedLayoutIncludesOpaqueBars = false
-    self.modalPresentationCapturesStatusBarAppearance = false
-        //设置导航栏背景色不变淡
-        
-        self.navigationController?.navigationBar.translucent = false
-        
-       self.navigationController?.navigationBarHidden = true
+
         // Do any additional setup after loading the view.
     }
     
@@ -30,8 +23,9 @@ class YZDanTangViewController: UIViewController {
     //下载数据
     func loadData(){
         
-      
-        
+     
+       
+       
         
         
     }
@@ -48,9 +42,7 @@ class YZDanTangViewController: UIViewController {
     
     
     
-    override func shouldAutorotate() -> Bool {
-        return false
-    }
+   
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
