@@ -14,20 +14,33 @@ class YZDanTangViewController: ROOTViewController {
         super.viewDidLoad()
  self.view.backgroundColor = UIColor.purpleColor()
         
-
+        loadHomeInfo(4);
         // Do any additional setup after loading the view.
     }
     
     
     
-    //下载数据
-    func loadData(){
-        
-     
-       
-       
-        
-        
+    /// 获取首页数据
+    func loadHomeInfo(id: Int) -> () {
+        //  let url = BASE_URL + "v1/channels/\(id)/items?gender=1&generation=1&limit=20&offset=0"
+        let url = BASE_URL + "v1/channels/\(id)/items"
+        let params = ["gender": 1,
+                      "generation": 1,
+                      "limit": 20,
+                      "offset": 0]
+        Alamofire
+            .request(.GET, url, parameters: params)
+            .responseJSON { (response) in
+            
+                
+                
+                if let json = response.result.value {
+                    print("HOMEJSON: \(json)")
+                    
+                    //接下来解析 
+                }
+                
+        }
     }
     
     
