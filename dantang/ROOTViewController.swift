@@ -12,18 +12,18 @@ class ROOTViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.edgesForExtendedLayout = UIRectEdge.None
+        self.edgesForExtendedLayout = UIRectEdge()
         
         self.extendedLayoutIncludesOpaqueBars = false
         self.modalPresentationCapturesStatusBarAppearance = false
         //设置导航栏背景色不变淡
         
-        self.navigationController?.navigationBar.translucent = false
+        self.navigationController?.navigationBar.isTranslucent = false
         
-        self.navigationController?.navigationBarHidden = true
+        self.navigationController?.isNavigationBarHidden = true
         // Do any additional setup after loading the view.
     }
-    override func shouldAutorotate() -> Bool {
+    override var shouldAutorotate : Bool {
         return false
     }
     override func didReceiveMemoryWarning() {

@@ -21,15 +21,15 @@ class YZTabbarViewController: UITabBarController {
     /**
      # 添加子控制器
      */
-    private func addChildViewControllers() {
+    fileprivate func addChildViewControllers() {
         addChildViewController("YZDanTangViewController", title: "单糖", imageName: "TabBar_home_23x23_")
         addChildViewController("YZProductViewController", title: "单品", imageName: "TabBar_gift_23x23_")
         addChildViewController("YZCategoryViewController", title: "分类", imageName: "TabBar_category_23x23_")
         addChildViewController("YZMeViewController", title: "我", imageName: "TabBar_me_boy_23x23_")
     }
-     private func addChildViewController(childControllerName: String, title: String, imageName: String) {
+     fileprivate func addChildViewController(_ childControllerName: String, title: String, imageName: String) {
         
-        let ns = NSBundle.mainBundle().infoDictionary!["CFBundleExecutable"] as! String
+        let ns = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String
         let cls:AnyClass? = NSClassFromString(ns + "." + childControllerName)
         let  vcClass = cls as!UIViewController.Type
         let vc = vcClass.init()

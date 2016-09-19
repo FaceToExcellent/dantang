@@ -9,32 +9,32 @@
 import UIKit
 enum YZTopicType: Int {
     /// 精选
-    case Selection = 4
+    case selection = 4
     /// 美食
-    case Food = 14
+    case food = 14
     /// 家居
-    case Household = 16
+    case household = 16
     /// 数码
-    case Digital = 17
+    case digital = 17
     /// 美物
-    case GoodThing = 13
+    case goodThing = 13
     /// 杂货
-    case Grocery = 22
+    case grocery = 22
 }
 
 enum YZShareButtonType: Int {
     /// 微信朋友圈
-    case WeChatTimeline = 0
+    case weChatTimeline = 0
     /// 微信好友
-    case WeChatSession = 1
+    case weChatSession = 1
     /// 微博
-    case Weibo = 2
+    case weibo = 2
     /// QQ 空间
-    case QZone = 3
+    case qZone = 3
     /// QQ 好友
-    case QQFriends = 4
+    case qqFriends = 4
     /// 复制链接
-    case CopyLink = 5
+    case copyLink = 5
 }
 
 enum YZOtherLoginButtonType: Int {
@@ -43,7 +43,7 @@ enum YZOtherLoginButtonType: Int {
     /// 微信
     case weChatLogin = 101
     /// QQ
-    case QQLogin = 102
+    case qqLogin = 102
 }
 
 /// 服务器地址
@@ -73,9 +73,9 @@ let kTitlesViewY: CGFloat = 64
 /// 动画时长
 let kAnimationDuration = 0.25
 /// 屏幕的宽
-let SCREENW = UIScreen.mainScreen().bounds.size.width
+let SCREENW = UIScreen.main.bounds.size.width
 /// 屏幕的高
-let SCREENH = UIScreen.mainScreen().bounds.size.height
+let SCREENH = UIScreen.main.bounds.size.height
 /// 分类界面 顶部 item 的高
 let kitemH: CGFloat = 75
 /// 分类界面 顶部 item 的宽
@@ -87,7 +87,7 @@ let kTopViewH: CGFloat = 230
 
 
 /// RGBA的颜色设置
-func YZColor(r:CGFloat, g:CGFloat, b:CGFloat, a:CGFloat) -> UIColor {
+func YZColor(_ r:CGFloat, g:CGFloat, b:CGFloat, a:CGFloat) -> UIColor {
     return UIColor(red: r / 255.0, green: g / 255.0, blue: b / 255.0, alpha: a)
 }
 

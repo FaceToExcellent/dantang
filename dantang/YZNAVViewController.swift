@@ -13,17 +13,17 @@ class YZNAVViewController: UINavigationController {
         super.viewDidLoad()
         
       let navBar  = UINavigationBar.appearance()
-     navBar.barTintColor = UIColor.whiteColor()
-     navBar.tintColor = UIColor.blackColor()
+     navBar.barTintColor = UIColor.white
+     navBar.tintColor = UIColor.black
 //        navBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor(),NSForegroundColorAttributeName:UIFont.systemFontOfSize(20)]
         
     }
 
     
-    override func pushViewController(viewController: UIViewController, animated: Bool) {
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         if viewControllers.count>0  {
             viewController.hidesBottomBarWhenPushed = true
-            viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "checkUserType_backward_9x15_"), style: .Plain, target: self, action: #selector(navigationBackClick))
+            viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "checkUserType_backward_9x15_"), style: .plain, target: self, action: #selector(navigationBackClick))
         }
           super.pushViewController(viewController, animated: true)
     }
@@ -34,10 +34,10 @@ class YZNAVViewController: UINavigationController {
 //        }
         
         
-        if UIApplication.sharedApplication().networkActivityIndicatorVisible {
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        if UIApplication.shared.isNetworkActivityIndicatorVisible {
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
         }
-        popViewControllerAnimated(true)
+        popViewController(animated: true)
     }
 
     
