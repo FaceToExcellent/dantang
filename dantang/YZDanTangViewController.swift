@@ -9,12 +9,13 @@
 import UIKit
 import Alamofire
 class YZDanTangViewController: ROOTViewController {
-
+var date:NSMutableArray?
     override func viewDidLoad() {
         super.viewDidLoad()
  self.view.backgroundColor = UIColor.purple
         
         loadHomeInfo(4);
+        makeUI();
         // Do any additional setup after loading the view.
     }
     
@@ -32,8 +33,21 @@ class YZDanTangViewController: ROOTViewController {
            // print(response.data)     // server data
            // print(response.result)   // result of response serialization
             
-            if let JSON = response.result.value {
-                print("JSON: \(JSON)")
+            if let JSON = response.result.value  {
+               // print("JSON: \(JSON)")
+                
+                let dict : NSDictionary = (JSON as? NSDictionary)!
+                
+               // print(dict["code"])
+                
+               // print(dict["data"])
+              //  print(dict["message"])
+              
+                let model = Homemodel().setHomeModelData(data: dict["data"] as!NSDictionary)
+                self.date?.add(model)
+                let a :Homeinnermodel = model.items?.object(at: 0) as! Homeinnermodel
+                print(a.title)
+                
             }
         }
 
@@ -41,7 +55,10 @@ class YZDanTangViewController: ROOTViewController {
         
     }
     
-    
+    func makeUI(){
+        
+        
+    }
     
     
     

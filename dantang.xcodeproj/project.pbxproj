@@ -22,6 +22,7 @@
 		604E27011D7D281600997864 /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 604E26FE1D7D281600997864 /* Default-667h@2x.png */; };
 		604E27021D7D281600997864 /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 604E26FF1D7D281600997864 /* Default-736h@3x.png */; };
 		604E27991D7D2D5400997864 /* YZTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604E27981D7D2D5400997864 /* YZTabbarViewController.swift */; };
+		60589D911D93778C000C1813 /* Homeinnermodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60589D901D93778C000C1813 /* Homeinnermodel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		604E26FE1D7D281600997864 /* Default-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-667h@2x.png"; sourceTree = "<group>"; };
 		604E26FF1D7D281600997864 /* Default-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-736h@3x.png"; sourceTree = "<group>"; };
 		604E27981D7D2D5400997864 /* YZTabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZTabbarViewController.swift; sourceTree = "<group>"; };
+		60589D901D93778C000C1813 /* Homeinnermodel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Homeinnermodel.swift; sourceTree = "<group>"; };
 		64303146573BBEB66A6B1140 /* Pods-dantang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dantang.debug.xcconfig"; path = "Pods/Target Support Files/Pods-dantang/Pods-dantang.debug.xcconfig"; sourceTree = "<group>"; };
 		802807CD8D981360A8130551 /* Pods_dantang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dantang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -79,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				604A36D31D8E3113007B2FF1 /* Homemodel.swift */,
+				60589D901D93778C000C1813 /* Homeinnermodel.swift */,
 			);
 			name = M;
 			sourceTree = "<group>";
@@ -151,7 +154,6 @@
 		604E27071D7D2ACE00997864 /* other */ = {
 			isa = PBXGroup;
 			children = (
-				604E26FB1D7D27EE00997864 /* ROOTViewController.swift */,
 				604E26FD1D7D281600997864 /* Default-568h@2x.png */,
 				604E26FE1D7D281600997864 /* Default-667h@2x.png */,
 				604E26FF1D7D281600997864 /* Default-736h@3x.png */,
@@ -164,6 +166,7 @@
 		604E27971D7D2C2500997864 /* main */ = {
 			isa = PBXGroup;
 			children = (
+				604E26FB1D7D27EE00997864 /* ROOTViewController.swift */,
 				604E27981D7D2D5400997864 /* YZTabbarViewController.swift */,
 				6041A7FE1D86895D008ACDCF /* YZNAVViewController.swift */,
 				6041A8001D869479008ACDCF /* YZConst.swift */,
@@ -201,7 +204,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = HYZ;
 				TargetAttributes = {
 					604E26E51D7D279800997864 = {
@@ -296,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				604A36D41D8E3113007B2FF1 /* Homemodel.swift in Sources */,
+				60589D911D93778C000C1813 /* Homeinnermodel.swift in Sources */,
 				6041A7FB1D86878C008ACDCF /* YZProductViewController.swift in Sources */,
 				6041A8011D869479008ACDCF /* YZConst.swift in Sources */,
 				604E26FC1D7D27EE00997864 /* ROOTViewController.swift in Sources */,
@@ -325,8 +329,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -371,8 +377,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -391,6 +399,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -400,6 +409,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 64303146573BBEB66A6B1140 /* Pods-dantang.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = dantang/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -414,6 +424,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0E926326B0EF69E7841E8871 /* Pods-dantang.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = dantang/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
