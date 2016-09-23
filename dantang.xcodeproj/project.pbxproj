@@ -23,6 +23,7 @@
 		604E27021D7D281600997864 /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 604E26FF1D7D281600997864 /* Default-736h@3x.png */; };
 		604E27991D7D2D5400997864 /* YZTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604E27981D7D2D5400997864 /* YZTabbarViewController.swift */; };
 		60589D911D93778C000C1813 /* Homeinnermodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60589D901D93778C000C1813 /* Homeinnermodel.swift */; };
+		6092BA451D94D48800CC6F38 /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6092BA441D94D48800CC6F38 /* HomeViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		604E26FF1D7D281600997864 /* Default-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-736h@3x.png"; sourceTree = "<group>"; };
 		604E27981D7D2D5400997864 /* YZTabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZTabbarViewController.swift; sourceTree = "<group>"; };
 		60589D901D93778C000C1813 /* Homeinnermodel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Homeinnermodel.swift; sourceTree = "<group>"; };
+		6092BA441D94D48800CC6F38 /* HomeViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
 		64303146573BBEB66A6B1140 /* Pods-dantang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dantang.debug.xcconfig"; path = "Pods/Target Support Files/Pods-dantang/Pods-dantang.debug.xcconfig"; sourceTree = "<group>"; };
 		802807CD8D981360A8130551 /* Pods_dantang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dantang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -121,8 +123,9 @@
 		604E27031D7D2A3400997864 /* 单糖(home) */ = {
 			isa = PBXGroup;
 			children = (
+				6092BA431D94D44C00CC6F38 /* V */,
+				6092BA421D94D44300CC6F38 /* C */,
 				604A36D21D8E30FB007B2FF1 /* M */,
-				6041A7FC1D8687AA008ACDCF /* YZDanTangViewController.swift */,
 			);
 			name = "单糖(home)";
 			sourceTree = "<group>";
@@ -172,6 +175,22 @@
 				6041A8001D869479008ACDCF /* YZConst.swift */,
 			);
 			name = main;
+			sourceTree = "<group>";
+		};
+		6092BA421D94D44300CC6F38 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				6041A7FC1D8687AA008ACDCF /* YZDanTangViewController.swift */,
+			);
+			name = C;
+			sourceTree = "<group>";
+		};
+		6092BA431D94D44C00CC6F38 /* V */ = {
+			isa = PBXGroup;
+			children = (
+				6092BA441D94D48800CC6F38 /* HomeViewCell.swift */,
+			);
+			name = V;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,6 +322,7 @@
 				6041A7FB1D86878C008ACDCF /* YZProductViewController.swift in Sources */,
 				6041A8011D869479008ACDCF /* YZConst.swift in Sources */,
 				604E26FC1D7D27EE00997864 /* ROOTViewController.swift in Sources */,
+				6092BA451D94D48800CC6F38 /* HomeViewCell.swift in Sources */,
 				6041A7FD1D8687AA008ACDCF /* YZDanTangViewController.swift in Sources */,
 				604E27991D7D2D5400997864 /* YZTabbarViewController.swift in Sources */,
 				6041A7F91D868778008ACDCF /* YZCategoryViewController.swift in Sources */,

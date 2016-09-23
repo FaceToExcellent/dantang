@@ -1,0 +1,6 @@
+framework module Pods_dantang {
+  umbrella header "Pods-dantang-umbrella.h"
+
+  export *
+  module * { export * }
+}
