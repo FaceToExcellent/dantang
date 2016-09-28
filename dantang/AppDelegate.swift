@@ -24,8 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        } else {
 //            window?.rootViewController = YMTabBarController()
 //        }
-        
-        window?.rootViewController = YZTabbarViewController()
+        let vc   = YZTabbarViewController()
+        window?.rootViewController = vc
         return true
     }
 

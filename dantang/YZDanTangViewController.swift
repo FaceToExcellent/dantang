@@ -8,7 +8,9 @@
 
 import UIKit
 import Alamofire
-class YZDanTangViewController: ROOTViewController,UITableViewDelegate,UITableViewDataSource{
+class YZDanTangViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
+    
+     
  var model = Homemodel()
   let tableView=UITableView()
     
@@ -16,7 +18,9 @@ class YZDanTangViewController: ROOTViewController,UITableViewDelegate,UITableVie
     let hb = UIScreen.main.bounds.height / 1334
     override func viewDidLoad() {
         super.viewDidLoad()
- self.view.backgroundColor = UIColor.purple
+     
+        self.navigationController?.isNavigationBarHidden = true
+        self.view.backgroundColor = UIColor.white
         
         loadHomeInfo(4);
     
@@ -99,7 +103,14 @@ class YZDanTangViewController: ROOTViewController,UITableViewDelegate,UITableVie
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 320*hb
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let a :Homeinnermodel = self.model.items?.object(at: indexPath.row) as! Homeinnermodel
+        let vc = DantangDetailViewController()
+        vc.homemodel = a
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
     
     
     
