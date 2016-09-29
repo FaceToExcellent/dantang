@@ -7,14 +7,39 @@
 //
 
 import UIKit
-
+import Alamofire
 class YZProductViewController: UIViewController {
-
+    let limit:Int = 1
+    var offset:Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
 self.view.backgroundColor = UIColor.orange
         // Do any additional setup after loading the view.
+        
+        loaddanpinData()
     }
+    
+    func  loaddanpinData(){
+        
+        let url = BASE_URL + "v2/items?gender=1&generation=1&limit=\(limit)&offset=\(offset)"
+        
+        Alamofire.request(url).responseJSON { response in
+            //  print(response.request)  // original URL request
+            //  print(response.response) // HTTP URL response
+            // print(response.data)     // server data
+            // print(response.result)   // result of response serialization
+            if let JSON = response.result.value  {
+                    let dict : NSDictionary = (JSON as? NSDictionary)!
+                    print(dict)
+                
+            }
+            
+        }
+        
+    }
+    
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -22,14 +47,5 @@ self.view.backgroundColor = UIColor.orange
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+  
 }

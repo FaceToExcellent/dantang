@@ -37,7 +37,7 @@ class YZDanTangViewController: UIViewController,UITableViewDelegate,UITableViewD
         //  let url = BASE_URL + "v1/channels/\(id)/items?gender=1&generation=1&limit=20&offset=0"
         let url = BASE_URL + "v1/channels/\(id)/items?gender=1&generation=1&limit=\(limit)&offset=\(offset)"
   
-       print("BASE_URL",url)
+      // print("BASE_URL",url)
         
         
         Alamofire.request(url).responseJSON { response in
