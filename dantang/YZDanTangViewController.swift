@@ -18,7 +18,6 @@ class YZDanTangViewController: UIViewController,UITableViewDelegate,UITableViewD
     let limit:Int = 20
     var offset:Int = 0
     let wb = (UIScreen.main.bounds.width) / 750
-    let hb = UIScreen.main.bounds.height / 1334
     override func viewDidLoad() {
         super.viewDidLoad()
      
@@ -125,7 +124,7 @@ class YZDanTangViewController: UIViewController,UITableViewDelegate,UITableViewD
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 320*hb
+        return 320*wb
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         

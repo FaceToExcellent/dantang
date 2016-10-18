@@ -11,15 +11,15 @@ import UIKit
 class giftModel: NSObject {
     var items:NSArray?
     var paging:String?
-    func  setHomeModelData(data:NSDictionary)->Homemodel{
-        let model =   Homemodel()
+    func  setgiftModelData(data:NSDictionary)->giftModel{
+        let model =   giftModel()
         let array = data["items"] as? NSArray
         let array2 = NSMutableArray()
         for i in 0  ..< array!.count  {
             
-          //  let innermodel = Homeinnermodel().setHomeinnermodelData(data: array?.object(at: i) as! NSDictionary)
+         let innermodel = giftInnerModel().setgiftinnermodelData(data: array?.object(at: i) as! NSDictionary)
             
-          //  array2.add(innermodel)
+          array2.add(innermodel)
         }
         model.items = array2
         
