@@ -25,6 +25,8 @@
 		604E27991D7D2D5400997864 /* YZTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604E27981D7D2D5400997864 /* YZTabbarViewController.swift */; };
 		60589D911D93778C000C1813 /* Homeinnermodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60589D901D93778C000C1813 /* Homeinnermodel.swift */; };
 		6092BA451D94D48800CC6F38 /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6092BA441D94D48800CC6F38 /* HomeViewCell.swift */; };
+		60C736131DB5F8270011DB71 /* giftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C736121DB5F8270011DB71 /* giftModel.swift */; };
+		60C736151DB5F8830011DB71 /* giftInnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C736141DB5F8830011DB71 /* giftInnerModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		604E27981D7D2D5400997864 /* YZTabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZTabbarViewController.swift; sourceTree = "<group>"; };
 		60589D901D93778C000C1813 /* Homeinnermodel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Homeinnermodel.swift; sourceTree = "<group>"; };
 		6092BA441D94D48800CC6F38 /* HomeViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
+		60C736121DB5F8270011DB71 /* giftModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = giftModel.swift; sourceTree = "<group>"; };
+		60C736141DB5F8830011DB71 /* giftInnerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = giftInnerModel.swift; sourceTree = "<group>"; };
 		64303146573BBEB66A6B1140 /* Pods-dantang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dantang.debug.xcconfig"; path = "Pods/Target Support Files/Pods-dantang/Pods-dantang.debug.xcconfig"; sourceTree = "<group>"; };
 		802807CD8D981360A8130551 /* Pods_dantang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dantang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -135,7 +139,9 @@
 		604E27041D7D2A3F00997864 /* 单品(gift) */ = {
 			isa = PBXGroup;
 			children = (
-				6041A7FA1D86878C008ACDCF /* YZProductViewController.swift */,
+				60C736111DB5F71D0011DB71 /* V */,
+				60C736101DB5F7110011DB71 /* M */,
+				60C7360F1DB5F7050011DB71 /* VC */,
 			);
 			name = "单品(gift)";
 			sourceTree = "<group>";
@@ -192,6 +198,30 @@
 			isa = PBXGroup;
 			children = (
 				6092BA441D94D48800CC6F38 /* HomeViewCell.swift */,
+			);
+			name = V;
+			sourceTree = "<group>";
+		};
+		60C7360F1DB5F7050011DB71 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				6041A7FA1D86878C008ACDCF /* YZProductViewController.swift */,
+			);
+			name = VC;
+			sourceTree = "<group>";
+		};
+		60C736101DB5F7110011DB71 /* M */ = {
+			isa = PBXGroup;
+			children = (
+				60C736121DB5F8270011DB71 /* giftModel.swift */,
+				60C736141DB5F8830011DB71 /* giftInnerModel.swift */,
+			);
+			name = M;
+			sourceTree = "<group>";
+		};
+		60C736111DB5F71D0011DB71 /* V */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			name = V;
 			sourceTree = "<group>";
@@ -321,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				604A36D41D8E3113007B2FF1 /* Homemodel.swift in Sources */,
+				60C736131DB5F8270011DB71 /* giftModel.swift in Sources */,
 				60589D911D93778C000C1813 /* Homeinnermodel.swift in Sources */,
 				6041A7FB1D86878C008ACDCF /* YZProductViewController.swift in Sources */,
 				6041A8011D869479008ACDCF /* YZConst.swift in Sources */,
@@ -332,6 +363,7 @@
 				6041A7F71D868761008ACDCF /* YZMeViewController.swift in Sources */,
 				603D6A6B1D9B63760034387B /* MyWebView.swift in Sources */,
 				604E26EA1D7D279800997864 /* AppDelegate.swift in Sources */,
+				60C736151DB5F8830011DB71 /* giftInnerModel.swift in Sources */,
 				6041A7FF1D86895D008ACDCF /* YZNAVViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
