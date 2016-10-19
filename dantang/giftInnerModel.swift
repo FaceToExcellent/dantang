@@ -15,7 +15,7 @@ class giftInnerModel: NSObject {
     var cover_image_url : String?
     var mydescription :String?
     var published_at :Int?
-    var favorites_count :Int?
+    var favorites_count :Int!
     var id_ :Int?
     var image_urls :NSArray?
     var is_favorite :Int?
@@ -38,7 +38,7 @@ class giftInnerModel: NSObject {
         // model.created_at = data["created_at"] as?Int
          model.mydescription = data1["description"] as?String
         // model.editor_id = data["editor_id"] as?Int
-        model.favorites_count = data1["favorites_count"] as?Int
+        model.favorites_count = data1["favorites_count"] as! Int
          model.id_ = data1["id"] as?Int
          model.image_urls = data1["image_urls"] as?NSArray
          model.is_favorite = data1["is_favorite"] as?Int

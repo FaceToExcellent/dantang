@@ -1,0 +1,110 @@
+//
+//  giftTableViewCell.swift
+//  dantang
+//
+//  Created by HYZ on 16/10/19.
+//  Copyright © 2016年 HYZ. All rights reserved.
+//
+
+import UIKit
+import Kingfisher
+class giftTableViewCell: UITableViewCell {
+    let wb = (UIScreen.main.bounds.width) / 750
+    let liftView = giftCellinnerView()
+    let rightView = giftCellinnerView()
+    
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        
+        super.init(style: UITableViewCellStyle.default, reuseIdentifier: String?.none)
+        self.makeCellUI()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    
+    func  makeCellUI(){
+       
+        liftView.frame = CGRect.init(x: 10*wb, y: 10*wb, width: 355*wb, height: 500*wb)
+        self.addSubview(liftView)
+        
+        rightView.frame = CGRect.init(x: 385*wb, y: 10*wb, width: 355*wb, height: 500*wb)
+        self.addSubview(rightView)
+        
+        self.backgroundColor = UIColor.gray
+        
+        
+    }
+    
+    func setliftView(model:giftInnerModel){
+//        let url = URL(string: model.cover_image_url!)
+//        self.myimageView.kf.setImage(with: url)
+//        self.mytitle.text = model.title
+    
+        let url = URL(string: model.cover_image_url!)
+        self.liftView.logo.kf.setImage(with: url)
+        
+        self.liftView.name.text = model.name
+        self.liftView.price.text = model.price
+       
+        let  a:Int!  = model.favorites_count
+        
+        print(a)
+        //解析真是狠多坑
+        let strVar = String( a)
+        
+
+        self.liftView.islikednum.text = strVar
+        
+        //print(str)
+        let seleted = model.is_favorite
+        if seleted == 0 {
+            self.liftView.islikd.isSelected = false
+        }else
+        {
+            self.liftView.islikd.isSelected = true
+        }
+     
+        
+        
+        
+        
+    }
+    
+    func setrightView(model:giftInnerModel){
+        let url = URL(string: model.cover_image_url!)
+        self.rightView.logo.kf.setImage(with: url)
+        self.rightView.name.text = model.name
+        self.rightView.price.text = model.price
+        let  a:Int!  = model.favorites_count
+        
+        print(a)
+        //解析真是狠多坑
+        let strVar = String( a)
+        self.rightView.islikednum.text = strVar
+        
+        let seleted = model.is_favorite
+        if seleted == 0 {
+            self.rightView.islikd.isSelected = false
+        }else
+        {
+            self.rightView.islikd.isSelected = true
+        }
+        
+    }
+    
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+
+}

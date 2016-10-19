@@ -16,18 +16,24 @@ class YZProductViewController: UIViewController,UITableViewDelegate,UITableViewD
      let wb = (UIScreen.main.bounds.width) / 750
     override func viewDidLoad() {
         super.viewDidLoad()
-self.view.backgroundColor = UIColor.orange
-        // Do any additional setup after loading the view.
+        self.navigationController?.navigationBar.barTintColor =
+            UIColor(red: 240/255, green: 105/255, blue: 105/255, alpha: 1)
+        self.navigationController?.navigationBar.titleTextAttributes =
+            [NSForegroundColorAttributeName: UIColor.white]
+        
+    
         
         loaddanpinData()
        // makeUI()
     }
     func makeUI(){
-        self.tableView.frame = CGRect.init(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
+        self.tableView.frame = CGRect.init(x: 0, y:64, width: self.view.frame.size.width, height: self.view.frame.size.height-64)
         tableView.delegate = self
         tableView.dataSource = self
         self.view.addSubview(tableView)
-        tableView.register(UITableViewCell().classForCoder, forCellReuseIdentifier: "gift")
+        tableView.register(giftTableViewCell().classForCoder, forCellReuseIdentifier: "gift")
+        
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
     }
     func  loaddanpinData(){
         
@@ -62,22 +68,42 @@ self.view.backgroundColor = UIColor.orange
         return  self.dateArray.count * 20
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = UITableViewCell()
-        cell = tableView.dequeueReusableCell(withIdentifier: "gift", for: indexPath) 
+        var cell = giftTableViewCell()
+        cell = tableView.dequeueReusableCell(withIdentifier: "gift", for: indexPath) as! giftTableViewCell
         cell.selectionStyle = .none
         cell.textLabel?.textColor = UIColor.black
         
         let num :Int = indexPath.row/20
         let model:giftModel = self.dateArray.object(at: num) as! giftModel
-        let a :giftInnerModel = model.items?.object(at:indexPath.row%20) as! giftInnerModel
+       // let a :giftInnerModel = model.items?.object(at:indexPath.row%20) as! giftInnerModel
         
-        cell.textLabel?.text = a.name
+        
+       // cell.textLabel?.text = a.name
+        //因为一次请求20个 所以单个情况暂时不写
+        if (model.items?.count)! > indexPath.row*2 {
+            let  row = indexPath.row*2;
+            let a :giftInnerModel = model.items?.object(at:row) as! giftInnerModel
+            cell.setliftView(model: a)
+            cell.liftView.tag = row
+            cell.tag = indexPath.row
+            
+            
+        }
+        
+        if (model.items?.count)! > (indexPath.row*2 + 1) {
+            let  row = indexPath.row*2 + 1;
+            let a :giftInnerModel = model.items?.object(at:row) as! giftInnerModel
+            cell.setrightView(model: a)
+            cell.rightView.tag = row
+            cell.tag = indexPath.row
+        }
+        
         //print(a.mydescription)
         
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 320 * wb
+        return 520 * wb
     }
 
     override func didReceiveMemoryWarning() {

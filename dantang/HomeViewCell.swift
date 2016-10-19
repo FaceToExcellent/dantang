@@ -13,7 +13,6 @@ class HomeViewCell: UITableViewCell {
     var mytitle = UILabel()
     
     let wb = (UIScreen.main.bounds.width) / 750
-    let hb = UIScreen.main.bounds.height / 1334
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         
@@ -30,10 +29,10 @@ class HomeViewCell: UITableViewCell {
     func  makeCellUI(){
         
         // 15 720 * 290 
-        myimageView.frame = CGRect.init(x: 15*wb, y:15*hb, width:720*wb, height: 290*hb)
+        myimageView.frame = CGRect.init(x: 15*wb, y:15*wb, width:720*wb, height: 290*wb)
         self .addSubview(myimageView)
         
-        mytitle.frame = CGRect.init(x: 20*wb, y:260*hb, width: 690*wb, height: 30*hb)
+        mytitle.frame = CGRect.init(x: 20*wb, y:260*wb, width: 690*wb, height: 30*wb)
         mytitle.textAlignment = .left
         mytitle.textColor = UIColor.white
         mytitle.font = UIFont.systemFont(ofSize: 12)
