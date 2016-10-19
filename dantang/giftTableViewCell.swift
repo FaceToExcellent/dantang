@@ -51,7 +51,7 @@ class giftTableViewCell: UITableViewCell {
        
         let  a:Int!  = model.favorites_count
         
-        print(a)
+        //print(a)
         //解析真是狠多坑
         let strVar = String( a)
         
