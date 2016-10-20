@@ -8,12 +8,16 @@
 
 import UIKit
 import Kingfisher
+
+protocol giftCellPushtoDetailDelegate :NSObjectProtocol {
+    func giftCellPushtoDetail(isleft:Bool, tag:Int)
+}
+
 class giftTableViewCell: UITableViewCell {
     let wb = (UIScreen.main.bounds.width) / 750
     let liftView = giftCellinnerView()
     let rightView = giftCellinnerView()
-    
-    
+    weak var delegate : giftCellPushtoDetailDelegate?
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         
         super.init(style: UITableViewCellStyle.default, reuseIdentifier: String?.none)
@@ -30,14 +34,33 @@ class giftTableViewCell: UITableViewCell {
         liftView.frame = CGRect.init(x: 10*wb, y: 10*wb, width: 355*wb, height: 500*wb)
         self.addSubview(liftView)
         
+        let  gesturnL :UITapGestureRecognizer = UITapGestureRecognizer.init(target: self, action:#selector(giftTableViewCell.liftPush))
+        liftView.addGestureRecognizer(gesturnL)
+        
+        
+        
         rightView.frame = CGRect.init(x: 385*wb, y: 10*wb, width: 355*wb, height: 500*wb)
         self.addSubview(rightView)
+        
+        let  gesturnR :UITapGestureRecognizer = UITapGestureRecognizer.init(target: self, action:  #selector(rightPush))
+        rightView.addGestureRecognizer(gesturnR)
+        
         
         self.backgroundColor = UIColor.gray
         
         
     }
+    func liftPush(){
     
+        //print("left")
+        delegate?.giftCellPushtoDetail(isleft: true, tag: self.tag)
+        
+    }
+    
+    func rightPush(){
+        //print("right")
+        delegate?.giftCellPushtoDetail(isleft: false, tag: self.tag)
+    }
     func setliftView(model:giftInnerModel){
 //        let url = URL(string: model.cover_image_url!)
 //        self.myimageView.kf.setImage(with: url)
@@ -80,7 +103,7 @@ class giftTableViewCell: UITableViewCell {
         self.rightView.price.text = model.price
         let  a:Int!  = model.favorites_count
         
-        print(a)
+       // print(a)
         //解析真是狠多坑
         let strVar = String( a)
         self.rightView.islikednum.text = strVar

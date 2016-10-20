@@ -8,7 +8,8 @@
 
 import UIKit
 import Alamofire
-class YZProductViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class YZProductViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,giftCellPushtoDetailDelegate {
+    
     let limit:Int = 20
     var offset:Int = 0
     let tableView=UITableView()
@@ -16,6 +17,7 @@ class YZProductViewController: UIViewController,UITableViewDelegate,UITableViewD
      let wb = (UIScreen.main.bounds.width) / 750
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.automaticallyAdjustsScrollViewInsets = false
         self.navigationController?.navigationBar.barTintColor =
             UIColor(red: 240/255, green: 105/255, blue: 105/255, alpha: 1)
         self.navigationController?.navigationBar.titleTextAttributes =
@@ -72,6 +74,7 @@ class YZProductViewController: UIViewController,UITableViewDelegate,UITableViewD
         cell = tableView.dequeueReusableCell(withIdentifier: "gift", for: indexPath) as! giftTableViewCell
         cell.selectionStyle = .none
         cell.textLabel?.textColor = UIColor.black
+        cell.delegate = self
         
         let num :Int = indexPath.row/20
         let model:giftModel = self.dateArray.object(at: num) as! giftModel
@@ -105,7 +108,31 @@ class YZProductViewController: UIViewController,UITableViewDelegate,UITableViewD
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 520 * wb
     }
-
+    func giftCellPushtoDetail(isleft: Bool, tag: Int) {
+        let num :Int = tag/20
+        let model:giftModel = self.dateArray.object(at: num) as! giftModel
+        let vc = YZPDetailViewController()
+        if isleft {
+        //tag*2
+               let a :giftInnerModel = model.items?.object(at:num*2) as! giftInnerModel
+              vc.model = a
+            
+        }else
+        {
+         //tag*2 +1
+            if (num*2+1) < (model.items?.count)! {
+                let a :giftInnerModel = model.items?.object(at:num*2+1) as! giftInnerModel
+                vc.model = a
+            }
+            
+            
+            
+        }
+        self.navigationController?.tabBarController?.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

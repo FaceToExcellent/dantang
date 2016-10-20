@@ -16,6 +16,7 @@
 		6041A7FD1D8687AA008ACDCF /* YZDanTangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041A7FC1D8687AA008ACDCF /* YZDanTangViewController.swift */; };
 		6041A7FF1D86895D008ACDCF /* YZNAVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041A7FE1D86895D008ACDCF /* YZNAVViewController.swift */; };
 		6041A8011D869479008ACDCF /* YZConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041A8001D869479008ACDCF /* YZConst.swift */; };
+		604362A51DB85B640012735C /* YZPDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604362A41DB85B640012735C /* YZPDetailViewController.swift */; };
 		604A36D41D8E3113007B2FF1 /* Homemodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604A36D31D8E3113007B2FF1 /* Homemodel.swift */; };
 		604E26EA1D7D279800997864 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604E26E91D7D279800997864 /* AppDelegate.swift */; };
 		604E26F11D7D279800997864 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 604E26F01D7D279800997864 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 		6041A7FC1D8687AA008ACDCF /* YZDanTangViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZDanTangViewController.swift; sourceTree = "<group>"; };
 		6041A7FE1D86895D008ACDCF /* YZNAVViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZNAVViewController.swift; sourceTree = "<group>"; };
 		6041A8001D869479008ACDCF /* YZConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZConst.swift; sourceTree = "<group>"; };
+		604362A41DB85B640012735C /* YZPDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZPDetailViewController.swift; sourceTree = "<group>"; };
 		604A36D31D8E3113007B2FF1 /* Homemodel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Homemodel.swift; sourceTree = "<group>"; };
 		604E26E61D7D279800997864 /* dantang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dantang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		604E26E91D7D279800997864 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				6041A7FA1D86878C008ACDCF /* YZProductViewController.swift */,
+				604362A41DB85B640012735C /* YZPDetailViewController.swift */,
 			);
 			name = VC;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				604A36D41D8E3113007B2FF1 /* Homemodel.swift in Sources */,
 				60C736131DB5F8270011DB71 /* giftModel.swift in Sources */,
 				60589D911D93778C000C1813 /* Homeinnermodel.swift in Sources */,
+				604362A51DB85B640012735C /* YZPDetailViewController.swift in Sources */,
 				6041A7FB1D86878C008ACDCF /* YZProductViewController.swift in Sources */,
 				6041A8011D869479008ACDCF /* YZConst.swift in Sources */,
 				6092BA451D94D48800CC6F38 /* HomeViewCell.swift in Sources */,
