@@ -46,8 +46,9 @@ class giftScollview: UIView,UIScrollViewDelegate {
     
     
     func loadData2(model:giftInnerModel){
-        
+        //print(model.image_urls)
         let w  = Int(self.frame.size.width)
+        
         self.dataArray = model.image_urls!
         
         //print(model.image_urls?.object(at: 0))

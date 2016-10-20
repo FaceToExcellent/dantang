@@ -144,11 +144,13 @@ class YZProductViewController: UIViewController,UITableViewDelegate,UITableViewD
         }else
         {
          //tag*2 +1
-            if (tag*2+1) < (model.items?.count)! {
+            
                 let  row = tag*2 + 1;
                 let a :giftInnerModel = model.items?.object(at:row%20) as! giftInnerModel
                 vc.model = a
-            }
+                
+               // print(a.image_urls)
+           
             
             
             
