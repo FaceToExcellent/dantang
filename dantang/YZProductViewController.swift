@@ -29,7 +29,7 @@ class YZProductViewController: UIViewController,UITableViewDelegate,UITableViewD
        // makeUI()
     }
     func makeUI(){
-        self.tableView.frame = CGRect.init(x: 0, y:64, width: self.view.frame.size.width, height: self.view.frame.size.height-64)
+        self.tableView.frame = CGRect.init(x: 0, y:64, width: self.view.frame.size.width, height: self.view.frame.size.height-64-44)
         tableView.delegate = self
         tableView.dataSource = self
         self.view.addSubview(tableView)
@@ -110,18 +110,19 @@ class YZProductViewController: UIViewController,UITableViewDelegate,UITableViewD
     }
     func giftCellPushtoDetail(isleft: Bool, tag: Int) {
         let num :Int = tag/20
+       // print(num)
         let model:giftModel = self.dateArray.object(at: num) as! giftModel
         let vc = YZPDetailViewController()
         if isleft {
         //tag*2
-               let a :giftInnerModel = model.items?.object(at:num*2) as! giftInnerModel
+               let a :giftInnerModel = model.items?.object(at:tag*2) as! giftInnerModel
               vc.model = a
             
         }else
         {
          //tag*2 +1
-            if (num*2+1) < (model.items?.count)! {
-                let a :giftInnerModel = model.items?.object(at:num*2+1) as! giftInnerModel
+            if (tag*2+1) < (model.items?.count)! {
+                let a :giftInnerModel = model.items?.object(at:tag*2+1) as! giftInnerModel
                 vc.model = a
             }
             
