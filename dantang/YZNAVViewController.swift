@@ -23,15 +23,20 @@ class YZNAVViewController: UINavigationController {
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         if viewControllers.count>0  {
             viewController.hidesBottomBarWhenPushed = true
-            viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "checkUserType_backward_9x15_"), style: .plain, target: self, action: #selector(navigationBackClick))
+            viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "icoBack"), style: .plain, target: self, action: #selector(navigationBackClick))
         }
           super.pushViewController(viewController, animated: true)
     }
     /// 返回按钮
+
+
+    
+    
+    
     func navigationBackClick() {
-//        if SVProgressHUD.isVisible() {
-//            SVProgressHUD.dismiss()
-//        }
+        //        if SVProgressHUD.isVisible() {
+        //            SVProgressHUD.dismiss()
+        //        }
         
         
         if UIApplication.shared.isNetworkActivityIndicatorVisible {
@@ -39,11 +44,6 @@ class YZNAVViewController: UINavigationController {
         }
         popViewController(animated: true)
     }
-
-    
-    
-    
-    
     
     
     override func didReceiveMemoryWarning() {
@@ -63,3 +63,5 @@ class YZNAVViewController: UINavigationController {
     */
 
 }
+
+
