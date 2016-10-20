@@ -107,7 +107,7 @@ class YZProductViewController: UIViewController,UITableViewDelegate,UITableViewD
         //因为一次请求20个 所以单个情况暂时不写
         if ((model.items?.count)!*(self.dateArray.count)) > indexPath.row*2 {
             let  row = indexPath.row*2;
-            let a :giftInnerModel = model.items?.object(at:row%10) as! giftInnerModel
+            let a :giftInnerModel = model.items?.object(at:row%20) as! giftInnerModel
             cell.setliftView(model: a)
             cell.liftView.tag = row
             cell.tag = indexPath.row
@@ -117,7 +117,7 @@ class YZProductViewController: UIViewController,UITableViewDelegate,UITableViewD
         
         if ((model.items?.count)!*(self.dateArray.count)) > (indexPath.row*2 + 1) {
             let  row = indexPath.row*2 + 1;
-            let a :giftInnerModel = model.items?.object(at:row%10) as! giftInnerModel
+            let a :giftInnerModel = model.items?.object(at:row%20) as! giftInnerModel
             cell.setrightView(model: a)
             cell.rightView.tag = row
             cell.tag = indexPath.row
@@ -131,20 +131,22 @@ class YZProductViewController: UIViewController,UITableViewDelegate,UITableViewD
         return 520 * wb
     }
     func giftCellPushtoDetail(isleft: Bool, tag: Int) {
-        let num :Int = tag/4
+        let num :Int = tag/10
        // print(num)
         let model:giftModel = self.dateArray.object(at: num) as! giftModel
         let vc = YZPDetailViewController()
         if isleft {
         //tag*2
-               let a :giftInnerModel = model.items?.object(at:tag*2) as! giftInnerModel
+            let  row = tag*2;
+            let a :giftInnerModel = model.items?.object(at:row%20) as! giftInnerModel
               vc.model = a
             
         }else
         {
          //tag*2 +1
             if (tag*2+1) < (model.items?.count)! {
-                let a :giftInnerModel = model.items?.object(at:tag*2+1) as! giftInnerModel
+                let  row = tag*2 + 1;
+                let a :giftInnerModel = model.items?.object(at:row%20) as! giftInnerModel
                 vc.model = a
             }
             
