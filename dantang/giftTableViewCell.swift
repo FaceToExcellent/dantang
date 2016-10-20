@@ -107,7 +107,7 @@ class giftTableViewCell: UITableViewCell {
         //解析真是狠多坑
         let strVar = String( a)
         self.rightView.islikednum.text = strVar
-        
+        //print(model.name)
         let seleted = model.is_favorite
         if seleted == 0 {
             self.rightView.islikd.isSelected = false
