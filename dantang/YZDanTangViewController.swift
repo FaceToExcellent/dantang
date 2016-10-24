@@ -79,6 +79,7 @@ class YZDanTangViewController: UIViewController,UITableViewDelegate,UITableViewD
         self.tableView.frame = CGRect.init(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         self.view.addSubview(tableView)
         tableView.register(HomeViewCell().classForCoder, forCellReuseIdentifier: "id")
         
