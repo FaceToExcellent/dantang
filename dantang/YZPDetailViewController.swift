@@ -12,6 +12,11 @@ class YZPDetailViewController: UIViewController {
 
     var model : giftInnerModel? = giftInnerModel()
     let headview = giftScollview()
+    let name  = UILabel()
+    let prices = UILabel()
+    let  mydescription = UILabel()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        self.view.backgroundColor = UIColor.white
@@ -36,7 +41,8 @@ class YZPDetailViewController: UIViewController {
     }
     
     func popCLick(){
-       self.navigationController?.popViewController(animated: true)
+    //swift 这个垃圾方式
+    self.navigationController?.popViewController(animated: true)
     }
     
     func makeUI(){
@@ -46,6 +52,31 @@ class YZPDetailViewController: UIViewController {
         self.view.addSubview(headview)
         
         headview.reloadData(model:  self.model!)
+        
+        name.frame = CGRect.init(x: 10, y: self.view.frame.size.width + 5, width: self.view.frame.size.width, height: 15)
+        name.textAlignment = .left
+        name.textColor = UIColor.black
+        name.font = UIFont.systemFont(ofSize: 14)
+        name.text = model?.name
+        self.view.addSubview(name)
+        
+        
+        prices.frame = CGRect.init(x: 10, y: self.view.frame.size.width + 25, width: self.view.frame.size.width, height: 15)
+        prices.textAlignment = .left
+        prices.textColor = UIColor.red
+        prices.font = UIFont.systemFont(ofSize: 12)
+        prices.text = "￥" + (model?.price)!
+        self.view.addSubview(prices)
+        
+        mydescription.frame = CGRect.init(x: 10, y: self.view.frame.size.width + 45, width: self.view.frame.size.width-20, height: 150)
+        mydescription.textAlignment = .left
+        mydescription.textColor = UIColor.black
+        mydescription.numberOfLines = 8
+        mydescription.lineBreakMode = .byTruncatingTail
+        mydescription.font = UIFont.systemFont(ofSize: 10)
+        mydescription.text = "PS:" + (model?.mydescription)!
+        mydescription.sizeToFit()//label 从顶部开始
+        self.view.addSubview(mydescription)
         
     }
     

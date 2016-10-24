@@ -70,7 +70,7 @@ class giftTableViewCell: UITableViewCell {
         self.liftView.logo.kf.setImage(with: url)
         
         self.liftView.name.text = model.name
-        self.liftView.price.text = model.price
+        self.liftView.price.text = "￥" + model.price!
        
         let  a:Int!  = model.favorites_count
         
@@ -100,7 +100,7 @@ class giftTableViewCell: UITableViewCell {
         let url = URL(string: model.cover_image_url!)
         self.rightView.logo.kf.setImage(with: url)
         self.rightView.name.text = model.name
-        self.rightView.price.text = model.price
+        self.rightView.price.text = "￥" + model.price!
         let  a:Int!  = model.favorites_count
         
        // print(a)

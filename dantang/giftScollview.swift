@@ -12,6 +12,7 @@ class giftScollview: UIView,UIScrollViewDelegate {
     
     
     let scrollview = UIScrollView()
+    let pagecontrol = UIPageControl()
     var dataArray  = NSArray()
     var page :Int! = 0
     
@@ -107,6 +108,13 @@ class giftScollview: UIView,UIScrollViewDelegate {
         scrollview.delegate = self
         self .addSubview(scrollview)
         
+        pagecontrol.frame = CGRect.init(x: 0, y: Int(self.frame.size.width - 30), width: Int(self.frame.size.width), height: 10)
+        pagecontrol.numberOfPages = dataArray.count
+        pagecontrol.currentPage = 0
+        pagecontrol.currentPageIndicatorTintColor = UIColor.white
+        pagecontrol.pageIndicatorTintColor = UIColor.gray
+        
+        self.addSubview(pagecontrol)
         
     }
     
@@ -141,9 +149,11 @@ class giftScollview: UIView,UIScrollViewDelegate {
         let orignX  = (scrollview.contentOffset.x - W)/scrollView.frame.size.width
         page = Int(orignX)
         
+        pagecontrol.currentPage = page
         repeatTimer.invalidate()
         
         self.timerCLick()
+        
         
         
     }

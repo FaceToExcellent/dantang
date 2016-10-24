@@ -37,7 +37,7 @@ class YZTabbarViewController: UITabBarController {
         vc.tabBarItem.selectedImage = UIImage(named: imageName + "selected")
         vc.title = title
         
-        let nav = YZNAVViewController()
+        let nav = UINavigationController()
         nav.addChildViewController(vc)
         addChildViewController(nav)
         
