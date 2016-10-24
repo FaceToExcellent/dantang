@@ -12,7 +12,8 @@ class YZMeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.gray
+        self.navigationController?.isNavigationBarHidden = true
+        self.view.backgroundColor = UIColor.white
         // Do any additional setup after loading the view.
     }
 
