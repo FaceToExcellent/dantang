@@ -45,7 +45,8 @@ enum YZOtherLoginButtonType: Int {
     /// QQ
     case qqLogin = 102
 }
-
+//等比缩放用到的比例
+  let wb = (UIScreen.main.bounds.width) / 750
 /// 服务器地址
 let BASE_URL = "http://api.dantangapp.com/"
 

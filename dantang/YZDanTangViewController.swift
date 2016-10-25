@@ -11,7 +11,7 @@ import Alamofire
 import DGElasticPullToRefresh
 class YZDanTangViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
     
-     
+
 
   let tableView=UITableView()
   var dateArray = NSMutableArray()
@@ -20,7 +20,7 @@ class YZDanTangViewController: UIViewController,UITableViewDelegate,UITableViewD
     let wb = (UIScreen.main.bounds.width) / 750
     override func viewDidLoad() {
         super.viewDidLoad()
-     
+        self.automaticallyAdjustsScrollViewInsets = false
         self.navigationController?.isNavigationBarHidden = true
         self.view.backgroundColor = UIColor.white
         
@@ -76,7 +76,7 @@ class YZDanTangViewController: UIViewController,UITableViewDelegate,UITableViewD
       
         
         
-        self.tableView.frame = CGRect.init(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
+        self.tableView.frame = CGRect.init(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height-44)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none

@@ -15,17 +15,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+     UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-//        // 检测用户是不是第一次启动
-//        if !NSUserDefaults.standardUserDefaults().boolForKey(YMFirstLaunch) {
-//            window?.rootViewController = YMNewfeatureViewController()
-//            NSUserDefaults.standardUserDefaults().setBool(true, forKey: YMFirstLaunch)
-//        } else {
-//            window?.rootViewController = YMTabBarController()
-//        }
+
         let vc   = YZTabbarViewController()
         window?.rootViewController = vc
+        
+
+        
+    
+       
+        
         return true
     }
 
