@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Photos
 
 protocol myheadViewDelegate: NSObjectProtocol {
     func myheadViewheadbuttonCLick()
@@ -36,10 +36,25 @@ class myheadView: UIView {
         bgImage.image = UIImage.init(named: "Me_ProfileBackground")
        self.addSubview(bgImage)
         
-    headimage.frame  = CGRect.init(x: (self.frame.size.width - 75)/2, y: (self.frame.size.height - 75)/2, width: 75, height: 75)
-        headimage.addTarget(self, action: #selector(myheadView.headimageCLick), for: .touchDragInside)
+    headimage.frame  = CGRect.init(x: (self.frame.size.width - 200*wb)/2, y: (self.frame.size.height - 200*wb)/2, width: 200*wb, height:200*wb)
+        headimage.addTarget(self, action: #selector(myheadView.headimageCLick), for: .touchUpInside)
     self.addSubview(headimage)
+    headimage.layer.masksToBounds = true
+    headimage.layer.cornerRadius = headimage.frame.size.width/2
+    
+        
+        
+    
+   // let imageView:UIImageView = UIImageView.init(image: bgImage.image)
+        
+        
     headimage.setBackgroundImage(UIImage.init(named: "Me_AvatarPlaceholder_75x75_"), for: .normal)
+        
+   
+
+        
+        
+        
     
     messageButton.frame  = CGRect.init(x: 30*wb, y: 70*wb, width: 40*wb, height: 40*wb)
      messageButton.setBackgroundImage(UIImage.init(named: "Me_message_20x20_"), for: .normal)
