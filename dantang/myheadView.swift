@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Photos
+
 
 protocol myheadViewDelegate: NSObjectProtocol {
     func myheadViewheadbuttonCLick()

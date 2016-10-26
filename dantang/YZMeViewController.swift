@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class YZMeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,myheadViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIActionSheetDelegate{
     let tableView=UITableView()
      //不这么写不显示
