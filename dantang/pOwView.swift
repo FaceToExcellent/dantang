@@ -14,7 +14,7 @@ class pOwView: UIView {
     let pinglunButton = UIButton()
     let redview = UIView()
     
-    let webView = UIWebView()
+      let webview =  MyWebView.init(f:CGRect.init(x: 0, y: 90*wb + 15, width: Screem_W, height:1000*wb))
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -64,6 +64,17 @@ class pOwView: UIView {
         redview.frame = CGRect.init(x: 0, y: 90*wb - 5, width: Screem_W/2, height: 5)
         redview.backgroundColor = UIColor.init(red: 231/255, green: 86/255, blue: 89/255, alpha: 1)
         titilview.addSubview(redview)
+        
+      
+        webview.backgroundColor = UIColor.orange
+        webview.loadMywebview(myUrl:"http://www.baidu.com")
+       // webview.isUserInteractionEnabled = false
+        
+        
+        //webview.webview.delegate=self;
+        //print("DantangDetailViewController",homemodel.content_url)
+        self.addSubview(webview)
+        
      }
     
     func buttonClick(sender:UIButton){
@@ -73,10 +84,13 @@ class pOwView: UIView {
             redview.frame = CGRect.init(x: 0, y: 90*wb - 5, width: Screem_W/2, height: 5)
            // webView.backgroundColor = UIColor.gray
             
+            webview.loadMywebview(myUrl: "http://baidu.com")
+            
         }else if sender.tag == 2 {
             print("评论")
             redview.frame = CGRect.init(x: Screem_W/2, y: 90*wb - 5, width: Screem_W/2, height: 5)
            // webView.backgroundColor  = UIColor.blue
+             webview.loadMywebview(myUrl: "http://youku.com")
         }
     }
     
