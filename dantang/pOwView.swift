@@ -13,8 +13,11 @@ class pOwView: UIView {
     let tuwenButton = UIButton()
     let pinglunButton = UIButton()
     let redview = UIView()
+    let limit:Int = 20
+    var offset:Int = 0
+    var id :Int = 0
+    let webview =  MyWebView.init(f:CGRect.init(x: 0, y: 90*wb + 15, width: Screem_W, height:1000*wb))
     
-      let webview =  MyWebView.init(f:CGRect.init(x: 0, y: 90*wb + 15, width: Screem_W, height:1000*wb))
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -67,7 +70,11 @@ class pOwView: UIView {
         
       
         webview.backgroundColor = UIColor.orange
-        webview.loadMywebview(myUrl:"http://www.baidu.com")
+        //     let url = BASE_URL + "v2/items/\(id)/comments"
+       // let params = ["limit": 20,"offset": 0]
+       // let id = 0
+        let url = BASE_URL + "v2/items/\(id)"
+        webview.loadMywebview(myUrl:url)
        // webview.isUserInteractionEnabled = false
         
         
@@ -81,19 +88,24 @@ class pOwView: UIView {
         if sender.tag == 1 {
             //图文介绍
             print("图文介绍")
+              let url = BASE_URL + "v2/items/\(id)"
             redview.frame = CGRect.init(x: 0, y: 90*wb - 5, width: Screem_W/2, height: 5)
            // webView.backgroundColor = UIColor.gray
             
-            webview.loadMywebview(myUrl: "http://baidu.com")
+            webview.loadMywebview(myUrl: url)
             
         }else if sender.tag == 2 {
             print("评论")
+             let url = BASE_URL + "v2/items/\(id)/comments?limit=\(limit)&offset=\(offset)"
             redview.frame = CGRect.init(x: Screem_W/2, y: 90*wb - 5, width: Screem_W/2, height: 5)
            // webView.backgroundColor  = UIColor.blue
-             webview.loadMywebview(myUrl: "http://youku.com")
+             webview.loadMywebview(myUrl: url)
         }
     }
-    
+    func reloadView(id_:Int){
+        id = id_ 
+        makeUI()
+    }
     
     
 }

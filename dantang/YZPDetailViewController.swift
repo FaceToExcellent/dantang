@@ -111,6 +111,8 @@ class YZPDetailViewController: UIViewController,UITableViewDelegate,UITableViewD
             let pwview = pOwView()
             pwview.frame = CGRect.init(x: 0, y: 0, width: Screem_W, height: Screem_H)
            // pwview.backgroundColor = UIColor.red
+            pwview.reloadView(id_: (model?.id_)!)
+            
             cell.addSubview(pwview)
         }
         
