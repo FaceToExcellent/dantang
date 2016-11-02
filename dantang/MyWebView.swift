@@ -77,8 +77,8 @@ class MyWebView: UIView,UIWebViewDelegate {
     }
     func setAlertShow(error: NSError?){
         let jsString = String(format:"alert(网络出错鸟)")
-        print(jsString)
-        print(error)
+      //  print(jsString)
+      //  print(error)
         //交互
         webview.stringByEvaluatingJavaScript(from: jsString)
 

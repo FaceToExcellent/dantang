@@ -24,7 +24,7 @@ var  homemodel = Homeinnermodel()
         let webview =  MyWebView.init(f:CGRect.init(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
         webview.loadMywebview(myUrl:homemodel.content_url!)
         //webview.webview.delegate=self;
-        print("DantangDetailViewController",homemodel.content_url)
+       // print("DantangDetailViewController",homemodel.content_url)
         self.view.addSubview(webview)
 
            }

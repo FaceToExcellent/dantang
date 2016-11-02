@@ -95,12 +95,12 @@ class pOwView: UIView {
                     }else
                     {
                         let data : NSDictionary = (dict.object(forKey: "data")as? NSDictionary )!
-                        print(data.object(forKey: "detail_html"))
+                       // print(data.object(forKey: "detail_html"))
                         if data.object(forKey: "detail_html") as?String == nil{
                             
                         }else
                         {
-                            let htmlstr : String = (data.object(forKey: "detail_html") as?String)! + "<style type=\"text/css\"> img{ width: 100%; height: auto; display: block; } </style>"
+                            let htmlstr : String = (data.object(forKey: "detail_html") as?String)!
                             
                             self.webview.loadHTMLString(htmlstr, baseURL: nil)
                            
@@ -126,7 +126,45 @@ class pOwView: UIView {
             //图文介绍
             //print("图文介绍")
             redview.frame = CGRect.init(x: 0, y: 90*wb - 5, width: Screem_W/2, height: 5)
-            self.webview.loadHTMLString(htmlstr, baseURL: nil)
+            let url = BASE_URL + "v2/items/\(id)"
+            if id == 0 {
+                
+            }else
+            {
+                Alamofire.request(url).responseJSON { response in
+                    //  print(response.request)  // original URL request
+                    //  print(response.response) // HTTP URL response
+                    // print(response.data)     // server data
+                    // print(response.result)   // result of response serialization
+                    if let JSON = response.result.value  {
+                        let dict : NSDictionary = (JSON as? NSDictionary)!
+                        // print("dict",dict)
+                        // print("resultresult",dict.object(forKey: "data"))
+                        if  dict.object(forKey: "code")as!Int == 404 {
+                            
+                            print("请求失败")
+                        }else
+                        {
+                            let data : NSDictionary = (dict.object(forKey: "data")as? NSDictionary )!
+                            //print(data.object(forKey: "detail_html"))
+                            if data.object(forKey: "detail_html") as?String == nil{
+                                
+                            }else
+                            {
+                                let htmlstr : String = (data.object(forKey: "detail_html") as?String)!
+                                
+                                self.webview.loadHTMLString(htmlstr, baseURL: nil)
+                                
+                            }
+                        }
+                        
+                        // print(data)
+                    }
+                    
+                }
+            }
+            
+
             
         }else if sender.tag == 2 {
             print("评论是原生的")

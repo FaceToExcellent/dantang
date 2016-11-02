@@ -111,7 +111,7 @@ class YZPDetailViewController: UIViewController,UITableViewDelegate,UITableViewD
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         if indexPath.row == 0 {
             let pwview = pOwView()
-            pwview.frame = CGRect.init(x: 0, y: 0, width: Screem_W, height: Screem_H)
+            pwview.frame = CGRect.init(x: 0, y: 0, width: Screem_W, height: 1090*wb)
            // pwview.backgroundColor = UIColor.red
             
             pwview.reloadView(id_: (model?.id_)!)
@@ -128,7 +128,7 @@ class YZPDetailViewController: UIViewController,UITableViewDelegate,UITableViewD
         
         if indexPath.row == 0 {
            
-            return Screem_H
+            return 1000*wb + 90*wb
         }
         
         return 100
