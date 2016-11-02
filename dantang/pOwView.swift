@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Alamofire
+
+
 
 class pOwView: UIView {
     let titilview = UIView()
@@ -16,7 +19,9 @@ class pOwView: UIView {
     let limit:Int = 20
     var offset:Int = 0
     var id :Int = 0
-    let webview =  MyWebView.init(f:CGRect.init(x: 0, y: 90*wb + 15, width: Screem_W, height:1000*wb))
+    let htmlstr : String = ""
+    let webview =  MyWebView.init(f:CGRect.init(x: 0, y: 90*wb+15 , width: Screem_W, height:1000*wb))
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -69,17 +74,49 @@ class pOwView: UIView {
         titilview.addSubview(redview)
         
       
-        webview.backgroundColor = UIColor.orange
-        //     let url = BASE_URL + "v2/items/\(id)/comments"
-       // let params = ["limit": 20,"offset": 0]
-       // let id = 0
+     
         let url = BASE_URL + "v2/items/\(id)"
-        webview.loadMywebview(myUrl:url)
+        if id == 0 {
+            
+        }else
+        {
+            Alamofire.request(url).responseJSON { response in
+                //  print(response.request)  // original URL request
+                //  print(response.response) // HTTP URL response
+                // print(response.data)     // server data
+                // print(response.result)   // result of response serialization
+                if let JSON = response.result.value  {
+                    let dict : NSDictionary = (JSON as? NSDictionary)!
+                   // print("dict",dict)
+                   // print("resultresult",dict.object(forKey: "data"))
+                    if  dict.object(forKey: "code")as!Int == 404 {
+                        
+                        print("请求失败")
+                    }else
+                    {
+                        let data : NSDictionary = (dict.object(forKey: "data")as? NSDictionary )!
+                        print(data.object(forKey: "detail_html"))
+                        if data.object(forKey: "detail_html") as?String == nil{
+                            
+                        }else
+                        {
+                            let htmlstr : String = (data.object(forKey: "detail_html") as?String)! + "<style type=\"text/css\"> img{ width: 100%; height: auto; display: block; } </style>"
+                            
+                            self.webview.loadHTMLString(htmlstr, baseURL: nil)
+                           
+                        }
+                    }
+                    
+                    // print(data)
+                }
+                
+            }
+        }
+        
+        
        // webview.isUserInteractionEnabled = false
+        webview.backgroundColor = UIColor.red
         
-        
-        //webview.webview.delegate=self;
-        //print("DantangDetailViewController",homemodel.content_url)
         self.addSubview(webview)
         
      }
@@ -87,17 +124,27 @@ class pOwView: UIView {
     func buttonClick(sender:UIButton){
         if sender.tag == 1 {
             //图文介绍
-            print("图文介绍")
-              let url = BASE_URL + "v2/items/\(id)"
+            //print("图文介绍")
             redview.frame = CGRect.init(x: 0, y: 90*wb - 5, width: Screem_W/2, height: 5)
-           // webView.backgroundColor = UIColor.gray
-            
-            webview.loadMywebview(myUrl: url)
+            self.webview.loadHTMLString(htmlstr, baseURL: nil)
             
         }else if sender.tag == 2 {
-            print("评论")
+            print("评论是原生的")
              let url = BASE_URL + "v2/items/\(id)/comments?limit=\(limit)&offset=\(offset)"
             redview.frame = CGRect.init(x: Screem_W/2, y: 90*wb - 5, width: Screem_W/2, height: 5)
+            Alamofire.request(url).responseJSON { response in
+                //  print(response.request)  // original URL request
+                //  print(response.response) // HTTP URL response
+                // print(response.data)     // server data
+                // print(response.result)   // result of response serialization
+                if let JSON = response.result.value  {
+                    let dict : NSDictionary = (JSON as? NSDictionary)!
+                    print("评论",dict)
+                    
+                    
+                }
+                
+            }
            // webView.backgroundColor  = UIColor.blue
              webview.loadMywebview(myUrl: url)
         }

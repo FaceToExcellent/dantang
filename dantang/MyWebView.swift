@@ -12,11 +12,11 @@ class MyWebView: UIView,UIWebViewDelegate {
 
    let webview = UIWebView()
     //let  myURL = NSString()
-
      init(f: CGRect) {
      super.init(frame: f)
      webview.frame = f
      webview.delegate=self
+     webview.dataDetectorTypes = .all
      self.addSubview(webview)
     }
     
@@ -25,7 +25,9 @@ class MyWebView: UIView,UIWebViewDelegate {
     }
    
     
-   
+     func loadHTMLString(_ string: String, baseURL: URL?){
+        webview.loadHTMLString(string, baseURL:baseURL)
+    }
    
     
     func loadMywebview(myUrl:String){
@@ -35,6 +37,8 @@ class MyWebView: UIView,UIWebViewDelegate {
         let request = NSURLRequest(url: NSURL(string: (myUrl as String))! as URL)
         webview.loadRequest(request as URLRequest)
     }
+    
+  
     
     func cancelMywebview()
     {

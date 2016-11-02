@@ -91,6 +91,7 @@ class YZPDetailViewController: UIViewController,UITableViewDelegate,UITableViewD
         tableview.delegate = self
         tableview.dataSource = self
         tableview.tableHeaderView = HDview
+        tableview.separatorStyle = UITableViewCellSeparatorStyle.none
         tableview.register(UITableViewCell().classForCoder, forCellReuseIdentifier: "de")
         self.view.addSubview(tableview)
         
@@ -107,11 +108,14 @@ class YZPDetailViewController: UIViewController,UITableViewDelegate,UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
         cell = tableview.dequeueReusableCell(withIdentifier: "de", for: indexPath)
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
         if indexPath.row == 0 {
             let pwview = pOwView()
             pwview.frame = CGRect.init(x: 0, y: 0, width: Screem_W, height: Screem_H)
            // pwview.backgroundColor = UIColor.red
+            
             pwview.reloadView(id_: (model?.id_)!)
+          
             
             cell.addSubview(pwview)
         }
@@ -138,6 +142,7 @@ class YZPDetailViewController: UIViewController,UITableViewDelegate,UITableViewD
         // Dispose of any resources that can be recreated.
     }
     
+
 
     /*
     // MARK: - Navigation
