@@ -11,7 +11,7 @@ import Alamofire
 
 
 
-class pOwView: UIView {
+class pOwView: UIView,UIWebViewDelegate {
     let titilview = UIView()
     let tuwenButton = UIButton()
     let pinglunButton = UIButton()
@@ -20,7 +20,7 @@ class pOwView: UIView {
     var offset:Int = 0
     var id :Int = 0
     let htmlstr : String = ""
-    let webview =  MyWebView.init(f:CGRect.init(x: 0, y: 90*wb+15 , width: Screem_W, height:1000*wb))
+    let webview = UIWebView()
     
     
     override init(frame: CGRect) {
@@ -73,7 +73,9 @@ class pOwView: UIView {
         redview.backgroundColor = UIColor.init(red: 231/255, green: 86/255, blue: 89/255, alpha: 1)
         titilview.addSubview(redview)
         
-      
+        webview.frame = CGRect.init(x: 0, y: 90*wb + 15, width: Screem_W, height: 400)
+        webview.delegate = self
+        self.addSubview(webview)
      
         let url = BASE_URL + "v2/items/\(id)"
         if id == 0 {
@@ -115,9 +117,7 @@ class pOwView: UIView {
         
         
        // webview.isUserInteractionEnabled = false
-        webview.backgroundColor = UIColor.red
-        
-        self.addSubview(webview)
+       
         
      }
     
@@ -177,20 +177,34 @@ class pOwView: UIView {
                 // print(response.result)   // result of response serialization
                 if let JSON = response.result.value  {
                     let dict : NSDictionary = (JSON as? NSDictionary)!
-                    print("评论",dict)
-                    
+                    //print("评论",dict)
+                    let url1  = URL.init(string: url)
+                    let req = URLRequest.init(url: url1!)
+                    self.webview.loadRequest(req)
                     
                 }
                 
             }
            // webView.backgroundColor  = UIColor.blue
-             webview.loadMywebview(myUrl: url)
+         
+        
         }
     }
     func reloadView(id_:Int){
         id = id_ 
         makeUI()
     }
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        
+    }
     
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        
+    }
+    
+    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
+        print("出错了")
+    }
+  
     
 }
