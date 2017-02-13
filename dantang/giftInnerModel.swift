@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SwiftyJSON
 class giftInnerModel: NSObject {
     var brand_id :String?
     var brand_order :Int?

@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import DGElasticPullToRefresh
+import SwiftyJSON
 class YZProductViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,giftCellPushtoDetailDelegate {
     
     let limit:Int = 20
@@ -61,14 +62,53 @@ class YZProductViewController: UIViewController,UITableViewDelegate,UITableViewD
             //  print(response.response) // HTTP URL response
             // print(response.data)     // server data
             // print(response.result)   // result of response serialization
-            if let JSON = response.result.value  {
-                    let dict : NSDictionary = (JSON as? NSDictionary)!
-                  // print(dict)
-                let model = giftModel().setgiftModelData(data: dict["data"] as!NSDictionary)
-               self.dateArray.add(model)
+            if let JSON1 = response.result.value  {
+//MARK:swiftyJSON 解析
+//                if let dataFromString = response.data {
+//                    let json = JSON(data: dataFromString )
+//                    print("",json)
+//                    /* {
+//                     "code" : 200,
+//                     "data" : {
+//                     "items" : [
+//                     {
+//                     "type" : "item",
+//                     "data" : {
+//                     "description" : "开关一键式，便携又防漏，热水氤氲的湿气打在脸上，温暖又可爱~",
+//                     "editor_id" : 1037,
+//                     "url" : "http:\/\/dantang.liwushuo.com\/items\/1355",
+//                     "purchase_url" : "http:\/\/s.click.taobao.com\/t?e=m%3D2%26s%3DYxYY5WFio4EcQipKwQzePOeEDrYVVa64pRe%2F8jaAHci5VBFTL4hn2ZzpsqmXu%2FE9WI6w0dMGH8htabAtTg06px%2FVXctKptzdeP1OMBEVuKXSfUtBr7Z5QILBwQLXKLHMyxRpeaHkj4I49d%2BuVtoyMHEqY%2Bakgpmw",
+//                     "image_urls" : [
+//                     "http:\/\/7fvaoh.com3.z0.glb.qiniucdn.com\/image\/150819\/ovabcvdgu.jpg-w720",
+//*/
+//                
+//                }
+//                
+//MARK: 手动解析
+                let dict: NSDictionary  = JSON1 as! NSDictionary
+               // print(dict)
                 
-          //  print(model.paging)
                 
+                /*{
+                 code = 200;
+                 data =     {
+                 items =         (
+                 {
+                 data =                 {
+                 "brand_id" = "<null>";
+                 "brand_order" = 0;
+                 "category_id" = "<null>";
+                 "cover_image_url" = "http://7fvaoh.com3.z0.glb.qiniucdn.com/image/150819/a7wjwjck3_w.jpg-w720";
+                 "created_at" = 1439952881;
+                 description = "\U5f00\U5173\U4e00\U952e\U5f0f\Uff0c\U4fbf\U643a\U53c8\U9632\U6f0f\Uff0c\U70ed\U6c34\U6c24\U6c32\U7684\U6e7f\U6c14\U6253\U5728\U8138\U4e0a\Uff0c\U6e29\U6696\U53c8\U53ef\U7231~";
+                 "editor_id" = 1037;
+                 "favorites_count" = 198;
+                 id = 1355;
+                 "image_urls" =                     (
+                 "http://7fvaoh.com3.z0.glb.qiniucdn.com/image/150819/ovabcvdgu.jpg-w720",
+                 "http://7fvaoh.com3.z0.glb.qiniucdn.com/image/150819/gaw35u5bt.jpg-w720",*/
+                let model = giftModel().setgiftModelData(data: dict)
+                self.dateArray.add(model)
              
                 
                 self.makeUI();

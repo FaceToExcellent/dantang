@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 class giftModel: NSObject {
     var items:NSArray?
     var paging:String?

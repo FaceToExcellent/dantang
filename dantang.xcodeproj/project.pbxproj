@@ -17,6 +17,7 @@
 		6041A7FF1D86895D008ACDCF /* YZNAVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041A7FE1D86895D008ACDCF /* YZNAVViewController.swift */; };
 		6041A8011D869479008ACDCF /* YZConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041A8001D869479008ACDCF /* YZConst.swift */; };
 		604362A51DB85B640012735C /* YZPDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604362A41DB85B640012735C /* YZPDetailViewController.swift */; };
+		60486E101E51609400204142 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60486E0F1E51609400204142 /* SwiftyJSON.framework */; };
 		604A36D41D8E3113007B2FF1 /* Homemodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604A36D31D8E3113007B2FF1 /* Homemodel.swift */; };
 		604E26EA1D7D279800997864 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604E26E91D7D279800997864 /* AppDelegate.swift */; };
 		604E26F11D7D279800997864 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 604E26F01D7D279800997864 /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 		6041A7FE1D86895D008ACDCF /* YZNAVViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZNAVViewController.swift; sourceTree = "<group>"; };
 		6041A8001D869479008ACDCF /* YZConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZConst.swift; sourceTree = "<group>"; };
 		604362A41DB85B640012735C /* YZPDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZPDetailViewController.swift; sourceTree = "<group>"; };
+		60486E0F1E51609400204142 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../Library/Developer/Xcode/DerivedData/dantang-eohokgepeedoongbscuphlkiaomj/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		604A36D31D8E3113007B2FF1 /* Homemodel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Homemodel.swift; sourceTree = "<group>"; };
 		604E26E61D7D279800997864 /* dantang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dantang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		604E26E91D7D279800997864 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60486E101E51609400204142 /* SwiftyJSON.framework in Frameworks */,
 				0C24837F6F744505EAB7C9D3 /* Pods_dantang.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,6 +86,7 @@
 		1F035194EF1179120DC0F421 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				60486E0F1E51609400204142 /* SwiftyJSON.framework */,
 				802807CD8D981360A8130551 /* Pods_dantang.framework */,
 			);
 			name = Frameworks;
@@ -183,7 +187,6 @@
 				604E26FE1D7D281600997864 /* Default-667h@2x.png */,
 				604E26FF1D7D281600997864 /* Default-736h@3x.png */,
 				604E26F51D7D279800997864 /* Info.plist */,
-				604E26E91D7D279800997864 /* AppDelegate.swift */,
 			);
 			name = other;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				604E27981D7D2D5400997864 /* YZTabbarViewController.swift */,
 				6041A7FE1D86895D008ACDCF /* YZNAVViewController.swift */,
 				6041A8001D869479008ACDCF /* YZConst.swift */,
+				604E26E91D7D279800997864 /* AppDelegate.swift */,
 			);
 			name = main;
 			sourceTree = "<group>";
@@ -352,7 +356,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		47C1F39CEAF7F75C2FFAF4DB /* [CP] Embed Pods Frameworks */ = {

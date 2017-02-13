@@ -6,6 +6,8 @@ target ‘dantang’ do
     pod 'Alamofire', '~> 4.0’
     pod 'Kingfisher','~>3.0'
     pod 'DGElasticPullToRefresh', '~> 1.1'
+    pod 'SwiftyJSON'
+     
 end
 
 
