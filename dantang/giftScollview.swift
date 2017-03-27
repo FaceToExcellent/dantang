@@ -88,8 +88,9 @@ class giftScollview: UIView,UIScrollViewDelegate {
          let w  = Int(self.frame.size.width)
         let image = UIImageView()
         image.frame = CGRect.init(x: num*w, y: 0, width: w, height: w)
+//MARK:--Kingfisher 用法
+        let url = URL(string: imageUrl)
         
-         let url = URL(string: imageUrl)
         image.kf.setImage(with: url)
         image.tag = num
         
