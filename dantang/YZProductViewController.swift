@@ -107,7 +107,7 @@ class YZProductViewController: UIViewController,UITableViewDelegate,UITableViewD
                  "image_urls" =                     (
                  "http://7fvaoh.com3.z0.glb.qiniucdn.com/image/150819/ovabcvdgu.jpg-w720",
                  "http://7fvaoh.com3.z0.glb.qiniucdn.com/image/150819/gaw35u5bt.jpg-w720",*/
-                let model = giftModel().setgiftModelData(data: dict)
+                let model = giftModel().setgiftModelData(data: dict["data"] as! NSDictionary)
                 self.dateArray.add(model)
              
                 

@@ -134,7 +134,7 @@
 				604E27971D7D2C2500997864 /* main */,
 				604E27071D7D2ACE00997864 /* other */,
 				604E27061D7D2AAC00997864 /* 我(me) */,
-				604E27051D7D2A8C00997864 /* 分类(category) */,
+				604E27051D7D2A8C00997864 /* 三方库练习使用 */,
 				604E27041D7D2A3F00997864 /* 单品(gift) */,
 				604E27031D7D2A3400997864 /* 单糖(home) */,
 				604E26F01D7D279800997864 /* Assets.xcassets */,
@@ -162,12 +162,12 @@
 			name = "单品(gift)";
 			sourceTree = "<group>";
 		};
-		604E27051D7D2A8C00997864 /* 分类(category) */ = {
+		604E27051D7D2A8C00997864 /* 三方库练习使用 */ = {
 			isa = PBXGroup;
 			children = (
 				6041A7F81D868778008ACDCF /* YZCategoryViewController.swift */,
 			);
-			name = "分类(category)";
+			name = "三方库练习使用";
 			sourceTree = "<group>";
 		};
 		604E27061D7D2AAC00997864 /* 我(me) */ = {
@@ -302,7 +302,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = HYZ;
 				TargetAttributes = {
 					604E26E51D7D279800997864 = {

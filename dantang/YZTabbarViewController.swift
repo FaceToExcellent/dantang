@@ -24,7 +24,7 @@ class YZTabbarViewController: UITabBarController {
     fileprivate func addChildViewControllers() {
         addChildViewController("YZDanTangViewController", title: "单糖", imageName: "TabBar_home_23x23_")
         addChildViewController("YZProductViewController", title: "单品", imageName: "TabBar_gift_23x23_")
-        addChildViewController("YZCategoryViewController", title: "分类", imageName: "TabBar_category_23x23_")
+        addChildViewController("YZCategoryViewController", title: "三方库", imageName: "TabBar_category_23x23_")
         addChildViewController("YZMeViewController", title: "我", imageName: "TabBar_me_boy_23x23_")
     }
      fileprivate func addChildViewController(_ childControllerName: String, title: String, imageName: String) {
