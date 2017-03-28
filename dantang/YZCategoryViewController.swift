@@ -21,19 +21,19 @@ class YZCategoryViewController: UIViewController,UITableViewDelegate,UITableView
         
         
         self.view.backgroundColor = UIColor.white
-        
+         self.DataArray = ["FSCalendar","2","3"]
         self.makeUI()
         
     }
     func makeUI(){
         
-        tableView.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
+        tableView.frame = CGRect(x: 0, y: 64, width: self.view.frame.size.width, height: self.view.frame.size.height)
         tableView.delegate=self
         tableView.dataSource=self;
         self.view.addSubview(tableView)
         tableView.register(UITableViewCell().classForCoder, forCellReuseIdentifier: "id")
         
-        self.DataArray = [""]
+       
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return  (self.DataArray?.count)!;
@@ -43,7 +43,8 @@ class YZCategoryViewController: UIViewController,UITableViewDelegate,UITableView
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let  cell = tableView.dequeueReusableCell(withIdentifier: "id", for: indexPath)
+        var cell = UITableViewCell()
+        cell = tableView.dequeueReusableCell(withIdentifier: "id", for: indexPath)
         
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         
