@@ -7,7 +7,7 @@ target ‘dantang’ do
     pod 'Kingfisher','~>3.0'
     pod 'DGElasticPullToRefresh', '~> 1.1'
     pod 'SwiftyJSON'
-    
+    pod 'FSCalendar'
      
 end
 

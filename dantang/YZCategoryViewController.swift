@@ -8,8 +8,9 @@
 
 import UIKit
 
-class YZCategoryViewController: UIViewController {
-
+class YZCategoryViewController: UIViewController,UITableViewDelegate,UITableViewDataSource  {
+    let tableView = UITableView()
+    var DataArray : ([String])?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false
@@ -21,6 +22,49 @@ class YZCategoryViewController: UIViewController {
         
         self.view.backgroundColor = UIColor.white
         
+        self.makeUI()
+        
+    }
+    func makeUI(){
+        
+        tableView.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
+        tableView.delegate=self
+        tableView.dataSource=self;
+        self.view.addSubview(tableView)
+        tableView.register(UITableViewCell().classForCoder, forCellReuseIdentifier: "id")
+        
+        self.DataArray = [""]
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return  (self.DataArray?.count)!;
+    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let  cell = tableView.dequeueReusableCell(withIdentifier: "id", for: indexPath)
+        
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
+        
+        
+        cell.textLabel?.text = self.DataArray![indexPath.row];
+        
+        return cell;
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row==0  {
+            
+//            let vc  = myCollectionViewController()
+//            self.navigationController!.pushViewController(vc, animated: true)
+            
+        }
+        
+        
+        
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
     }
 
     
