@@ -21,7 +21,7 @@ class YZCategoryViewController: UIViewController,UITableViewDelegate,UITableView
         
         
         self.view.backgroundColor = UIColor.white
-         self.DataArray = ["FSCalendar","2","3"]
+         self.DataArray = ["FSCalendar（oc）","2","3"]
         self.makeUI()
         
     }
@@ -58,6 +58,9 @@ class YZCategoryViewController: UIViewController,UITableViewDelegate,UITableView
             
 //            let vc  = myCollectionViewController()
 //            self.navigationController!.pushViewController(vc, animated: true)
+            //桥接文件中需要导入 #import "FSCalendarViewController.h"
+            let vc = FSCalendarViewController()
+            self.navigationController!.pushViewController(vc, animated: true)
             
         }
         
