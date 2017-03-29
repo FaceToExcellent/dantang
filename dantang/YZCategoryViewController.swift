@@ -21,7 +21,7 @@ class YZCategoryViewController: UIViewController,UITableViewDelegate,UITableView
         
         
         self.view.backgroundColor = UIColor.white
-         self.DataArray = ["FSCalendar（oc）","2","3"]
+         self.DataArray = ["FSCalendar（oc）","chineseCalendar（oc）","3"]
         self.makeUI()
         
     }
@@ -64,7 +64,13 @@ class YZCategoryViewController: UIViewController,UITableViewDelegate,UITableView
             
         }
         
-        
+        if indexPath.row==1  {
+            
+    
+            let vc = chineseCalendarViewController()
+            self.navigationController!.pushViewController(vc, animated: true)
+            
+        }
         
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
