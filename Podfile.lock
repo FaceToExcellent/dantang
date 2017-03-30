@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (4.0.0)
   - DGElasticPullToRefresh (1.1)
+  - DZNEmptyDataSet (1.8.1)
   - FSCalendar (2.5.0)
   - Kingfisher (3.1.0)
   - SwiftyJSON (3.1.1)
@@ -8,6 +9,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - DGElasticPullToRefresh (~> 1.1)
+  - DZNEmptyDataSet
   - FSCalendar
   - Kingfisher (~> 3.0)
   - SwiftyJSON
@@ -15,10 +17,11 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
   DGElasticPullToRefresh: 28f11a6026302a90f8ffebbc6e24748e584dddd3
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FSCalendar: eacc1e0086e8784b395731595033d84ccc13a217
   Kingfisher: 7779f22e977393e9533a89a9685beb8f679d3767
   SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
 
-PODFILE CHECKSUM: f5739dbb8bf3f0030fda5a8247ee081f7df2a59a
+PODFILE CHECKSUM: 0ed2cbe983875bf17aae3775b780e4fd2b9d9c51
 
 COCOAPODS: 1.1.1
