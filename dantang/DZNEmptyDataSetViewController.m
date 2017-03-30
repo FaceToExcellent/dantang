@@ -7,8 +7,9 @@
 //
 
 #import "DZNEmptyDataSetViewController.h"
-
-@interface DZNEmptyDataSetViewController ()
+//导入头文件
+#import "UIScrollView+EmptyDataSet.h"
+@interface DZNEmptyDataSetViewController ()< DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 
 @end
 
@@ -16,7 +17,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+  
+    self.tableView.emptyDataSetSource = self;
+    self.tableView.emptyDataSetDelegate = self;
+    self.tableView.tableFooterView = [[UIView alloc] init];
     // Do any additional setup after loading the view.
+}
+#pragma mark - DZNEmptyDataSetSource // 返回图片 
+- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView{
+   // return [UIImage imageNamed:@"6"];
+    return [UIImage imageNamed:@"100"];
+
+}
+- (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView
+{
+    NSString *text = @"这应该是白页";
+    
+    NSDictionary *attributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:18.0f],
+                                 NSForegroundColorAttributeName: [UIColor darkGrayColor]};
+    
+    return [[NSAttributedString alloc] initWithString:text attributes:attributes];
 }
 
 - (void)didReceiveMemoryWarning {

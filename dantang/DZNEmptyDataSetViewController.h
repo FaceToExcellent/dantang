@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DZNEmptyDataSetViewController : UIViewController
+@interface DZNEmptyDataSetViewController : UITableViewController
 
 @end

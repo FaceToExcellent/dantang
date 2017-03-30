@@ -184,10 +184,10 @@
 		604E27051D7D2A8C00997864 /* 三方库练习使用 */ = {
 			isa = PBXGroup;
 			children = (
+				6041A7F81D868778008ACDCF /* YZCategoryViewController.swift */,
 				606095BB1E8A0A720015D0F1 /* dantang-Bridging-Header.h */,
 				603A6C2F1E8D1355003D8D81 /* DZNEmptyDataSet */,
 				606095B81E8A09FE0015D0F1 /* FSCalendar */,
-				6041A7F81D868778008ACDCF /* YZCategoryViewController.swift */,
 			);
 			name = "三方库练习使用";
 			sourceTree = "<group>";
