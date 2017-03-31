@@ -24,12 +24,7 @@
     self.tableView.tableFooterView = [[UIView alloc] init];
     // Do any additional setup after loading the view.
 }
-#pragma mark - DZNEmptyDataSetSource // 返回图片 
-- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView{
-   // return [UIImage imageNamed:@"6"];
-    return [UIImage imageNamed:@"100"];
 
-}
 - (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView
 {
     NSString *text = @"这应该是白页";
@@ -80,7 +75,82 @@
 - (CGFloat)spaceHeightForEmptyDataSet:(UIScrollView *)scrollView {
     return 100;
 }
+// 返回空白区域的颜色自定义
+- (UIColor *)backgroundColorForEmptyDataSet:(UIScrollView *)scrollView {
+    return [UIColor cyanColor];
 
+}
+
+//// 标题文字与详情文字同时调整垂直偏移量
+//- (CGFloat)verticalOffsetForEmptyDataSet:(UIScrollView *)scrollView {
+//    return -100;
+//
+//}
+
+#pragma mark - DZNEmptyDataSetSource
+// 返回图片
+#pragma mark - DZNEmptyDataSetSource // 返回图片
+- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView{
+    // return [UIImage imageNamed:@"6"];
+    return [UIImage imageNamed:@"content-details_like_selected_16x16_"];
+    
+}
+- (CAAnimation *)imageAnimationForEmptyDataSet:(UIScrollView *)scrollView {
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath: @"transform"];
+    animation.fromValue = [NSValue valueWithCATransform3D:CATransform3DIdentity];
+    animation.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeRotation(M_PI_2, 0.0, 0.0,   1.0)];
+    animation.duration = 0.25;
+    animation.cumulative = YES;
+    animation.repeatCount = MAXFLOAT;
+    return animation;
+}
+#pragma mark - DZNEmptyDataSetDelegate 
+// 图片是否要动画效果，默认NO
+- (BOOL)emptyDataSetShouldAnimateImageView:(UIScrollView *)scrollView {
+    return YES;
+}
+
+#pragma mark - 其他方法
+//// 返回图片的 tintColor
+//- (UIColor *)imageTintColorForEmptyDataSet:(UIScrollView *)scrollView {
+//    return [UIColor yellowColor];
+//}
+//// 返回可点击按钮的 image
+//- (UIImage *)buttonImageForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state {
+//    return [UIImage imageNamed:@"icon_wwdc"];
+//}
+//// 返回可点击按钮的 backgroundImage
+//- (UIImage *)buttonBackgroundImageForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state {
+//    return [UIImage imageNamed:@"icon_wwdc"];
+//}
+//// 返回自定义 view
+//- (UIView *)customViewForEmptyDataSet:(UIScrollView *)scrollView {
+//    return nil;
+//}
+// // 是否显示空白页，默认YES
+//- (BOOL)emptyDataSetShouldDisplay:(UIScrollView *)scrollView {
+//    return YES;
+//}
+//// 是否允许点击，默认YES
+//- (BOOL)emptyDataSetShouldAllowTouch:(UIScrollView *)scrollView {
+//    return YES;
+//}
+//// 是否允许滚动，默认NO
+//- (BOOL)emptyDataSetShouldAllowScroll:(UIScrollView *)scrollView {
+//    return YES;
+//}
+//// 图片是否要动画效果，默认NO
+////- (BOOL)emptyDataSetShouldAnimateImageView:(UIScrollView *)scrollView {
+////    return YES;
+////}
+//// 空白页将要出现
+//- (void)emptyDataSetWillAppear:(UIScrollView *)scrollView { }
+//// 空白页已经出现
+//- (void)emptyDataSetDidAppear:(UIScrollView *)scrollView { }
+//// 空白页将要消失
+//- (void)emptyDataSetWillDisappear:(UIScrollView *)scrollView { }
+//// 空白页已经消失
+//- (void)emptyDataSetDidDisappear:(UIScrollView *)scrollView { }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
