@@ -175,8 +175,8 @@ class pOwView: UIView,UIWebViewDelegate {
                 //  print(response.response) // HTTP URL response
                 // print(response.data)     // server data
                 // print(response.result)   // result of response serialization
-                if let JSON = response.result.value  {
-                    let dict : NSDictionary = (JSON as? NSDictionary)!
+                if response.result.value != nil  {
+                    //let dict : NSDictionary = (JSON as? NSDictionary)!
                     //print("评论",dict)
                     let url1  = URL.init(string: url)
                     let req = URLRequest.init(url: url1!)

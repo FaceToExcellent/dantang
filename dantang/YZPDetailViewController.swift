@@ -47,7 +47,15 @@ class YZPDetailViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     func popCLick(){
     //swift 这个垃圾方式
-    self.navigationController?.popViewController(animated: true)
+    //这里不能简单的pop 到上一层 不知道出于什么考虑
+        
+        let controllers = self.navigationController?.viewControllers
+        for vc in controllers! {
+            if vc is YZProductViewController {
+                _ = self.navigationController?.popToViewController(vc as! YZProductViewController, animated: true)
+            }
+        }
+        
     }
     
     func makeUI(){
