@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0C24837F6F744505EAB7C9D3 /* Pods_dantang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 802807CD8D981360A8130551 /* Pods_dantang.framework */; };
 		6034648E1E9622A2002025AB /* dantangUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6034648D1E9622A2002025AB /* dantangUITests.swift */; };
-		603464981E9622E0002025AB /* SwiftMonkey.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 603464861E962283002025AB /* SwiftMonkey.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		603A6C321E8D1370003D8D81 /* DZNEmptyDataSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 603A6C311E8D1370003D8D81 /* DZNEmptyDataSetViewController.m */; };
 		603D6A691D9B61BE0034387B /* DantangDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D6A681D9B61BE0034387B /* DantangDetailViewController.swift */; };
 		603D6A6B1D9B63760034387B /* MyWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D6A6A1D9B63760034387B /* MyWebView.swift */; };
@@ -42,13 +41,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		603464851E962283002025AB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 603464811E962283002025AB /* SwiftMonkey.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = OBJ_16;
-			remoteInfo = SwiftMonkey;
-		};
 		603464901E9622A2002025AB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 604E26DE1D7D279800997864 /* Project object */;
@@ -56,11 +48,11 @@
 			remoteGlobalIDString = 604E26E51D7D279800997864;
 			remoteInfo = dantang;
 		};
-		603464951E9622CB002025AB /* PBXContainerItemProxy */ = {
+		603940CB1E9C68BE0089AB46 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 603464811E962283002025AB /* SwiftMonkey.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = OBJ_17;
+			containerPortal = 603940C71E9C68BE0089AB46 /* SwiftMonkey.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = OBJ_16;
 			remoteInfo = SwiftMonkey;
 		};
 /* End PBXContainerItemProxy section */
@@ -72,7 +64,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				603464981E9622E0002025AB /* SwiftMonkey.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,10 +71,10 @@
 
 /* Begin PBXFileReference section */
 		0E926326B0EF69E7841E8871 /* Pods-dantang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dantang.release.xcconfig"; path = "Pods/Target Support Files/Pods-dantang/Pods-dantang.release.xcconfig"; sourceTree = "<group>"; };
-		603464811E962283002025AB /* SwiftMonkey.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftMonkey.xcodeproj; path = "../../SwiftMonkey-master/SwiftMonkey/SwiftMonkey.xcodeproj"; sourceTree = "<group>"; };
 		6034648B1E9622A2002025AB /* dantangUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dantangUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6034648D1E9622A2002025AB /* dantangUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dantangUITests.swift; sourceTree = "<group>"; };
 		6034648F1E9622A2002025AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		603940C71E9C68BE0089AB46 /* SwiftMonkey.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftMonkey.xcodeproj; path = SwiftMonkey/SwiftMonkey.xcodeproj; sourceTree = "<group>"; };
 		603A6C301E8D1370003D8D81 /* DZNEmptyDataSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZNEmptyDataSetViewController.h; sourceTree = "<group>"; };
 		603A6C311E8D1370003D8D81 /* DZNEmptyDataSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZNEmptyDataSetViewController.m; sourceTree = "<group>"; };
 		603D6A681D9B61BE0034387B /* DantangDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DantangDetailViewController.swift; sourceTree = "<group>"; };
@@ -161,14 +152,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		603464821E962283002025AB /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				603464861E962283002025AB /* SwiftMonkey.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		6034648C1E9622A2002025AB /* dantangUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +159,14 @@
 				6034648F1E9622A2002025AB /* Info.plist */,
 			);
 			path = dantangUITests;
+			sourceTree = "<group>";
+		};
+		603940C81E9C68BE0089AB46 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				603940CC1E9C68BE0089AB46 /* SwiftMonkey.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		603A6C2F1E8D1355003D8D81 /* DZNEmptyDataSet */ = {
@@ -199,7 +190,7 @@
 		604E26DD1D7D279800997864 = {
 			isa = PBXGroup;
 			children = (
-				603464811E962283002025AB /* SwiftMonkey.xcodeproj */,
+				603940C71E9C68BE0089AB46 /* SwiftMonkey.xcodeproj */,
 				604E26E81D7D279800997864 /* dantang */,
 				6034648C1E9622A2002025AB /* dantangUITests */,
 				604E26E71D7D279800997864 /* Products */,
@@ -390,7 +381,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				603464961E9622CB002025AB /* PBXTargetDependency */,
 				603464911E9622A2002025AB /* PBXTargetDependency */,
 			);
 			name = dantangUITests;
@@ -452,8 +442,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 603464821E962283002025AB /* Products */;
-					ProjectRef = 603464811E962283002025AB /* SwiftMonkey.xcodeproj */;
+					ProductGroup = 603940C81E9C68BE0089AB46 /* Products */;
+					ProjectRef = 603940C71E9C68BE0089AB46 /* SwiftMonkey.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -465,11 +455,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		603464861E962283002025AB /* SwiftMonkey.framework */ = {
+		603940CC1E9C68BE0089AB46 /* SwiftMonkey.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = SwiftMonkey.framework;
-			remoteRef = 603464851E962283002025AB /* PBXContainerItemProxy */;
+			remoteRef = 603940CB1E9C68BE0089AB46 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -590,11 +580,6 @@
 			isa = PBXTargetDependency;
 			target = 604E26E51D7D279800997864 /* dantang */;
 			targetProxy = 603464901E9622A2002025AB /* PBXContainerItemProxy */;
-		};
-		603464961E9622CB002025AB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SwiftMonkey;
-			targetProxy = 603464951E9622CB002025AB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -763,6 +748,7 @@
 				603464941E9622A2002025AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		604E26E11D7D279800997864 /* Build configuration list for PBXProject "dantang" */ = {
 			isa = XCConfigurationList;
