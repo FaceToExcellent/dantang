@@ -19,6 +19,7 @@
 		6041A7FF1D86895D008ACDCF /* YZNAVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041A7FE1D86895D008ACDCF /* YZNAVViewController.swift */; };
 		6041A8011D869479008ACDCF /* YZConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041A8001D869479008ACDCF /* YZConst.swift */; };
 		604362A51DB85B640012735C /* YZPDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604362A41DB85B640012735C /* YZPDetailViewController.swift */; };
+		604557601EA0AF3C0030493E /* SFKRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6045575F1EA0AF3C0030493E /* SFKRootViewController.m */; };
 		60486E101E51609400204142 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60486E0F1E51609400204142 /* SwiftyJSON.framework */; };
 		604A36D41D8E3113007B2FF1 /* Homemodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604A36D31D8E3113007B2FF1 /* Homemodel.swift */; };
 		604E26EA1D7D279800997864 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604E26E91D7D279800997864 /* AppDelegate.swift */; };
@@ -86,6 +87,8 @@
 		6041A7FE1D86895D008ACDCF /* YZNAVViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZNAVViewController.swift; sourceTree = "<group>"; };
 		6041A8001D869479008ACDCF /* YZConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZConst.swift; sourceTree = "<group>"; };
 		604362A41DB85B640012735C /* YZPDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZPDetailViewController.swift; sourceTree = "<group>"; };
+		6045575E1EA0AF3C0030493E /* SFKRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFKRootViewController.h; sourceTree = "<group>"; };
+		6045575F1EA0AF3C0030493E /* SFKRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFKRootViewController.m; sourceTree = "<group>"; };
 		60486E0F1E51609400204142 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../Library/Developer/Xcode/DerivedData/dantang-eohokgepeedoongbscuphlkiaomj/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		604A36D31D8E3113007B2FF1 /* Homemodel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Homemodel.swift; sourceTree = "<group>"; };
 		604E26E61D7D279800997864 /* dantang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dantang.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -245,6 +248,8 @@
 		604E27051D7D2A8C00997864 /* 三方库练习使用 */ = {
 			isa = PBXGroup;
 			children = (
+				6045575E1EA0AF3C0030493E /* SFKRootViewController.h */,
+				6045575F1EA0AF3C0030493E /* SFKRootViewController.m */,
 				6041A7F81D868778008ACDCF /* YZCategoryViewController.swift */,
 				606095BB1E8A0A720015D0F1 /* dantang-Bridging-Header.h */,
 				603A6C2F1E8D1355003D8D81 /* DZNEmptyDataSet */,
@@ -557,6 +562,7 @@
 				6092BA451D94D48800CC6F38 /* HomeViewCell.swift in Sources */,
 				603D6A691D9B61BE0034387B /* DantangDetailViewController.swift in Sources */,
 				6041A7FD1D8687AA008ACDCF /* YZDanTangViewController.swift in Sources */,
+				604557601EA0AF3C0030493E /* SFKRootViewController.m in Sources */,
 				604E27991D7D2D5400997864 /* YZTabbarViewController.swift in Sources */,
 				6041A7F91D868778008ACDCF /* YZCategoryViewController.swift in Sources */,
 				6041A7F71D868761008ACDCF /* YZMeViewController.swift in Sources */,

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface FSCalendarViewController : UIViewController
+#import "SFKRootViewController.h"
+@interface FSCalendarViewController : SFKRootViewController
 
 @end
