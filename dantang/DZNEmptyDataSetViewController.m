@@ -59,7 +59,8 @@
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://www.baidu.com"]];
      if ([[UIApplication sharedApplication] canOpenURL:url])
      {
-         [[UIApplication sharedApplication] openURL:url];
+         //10.3
+         [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
      }
 }
 
