@@ -6,3 +6,4 @@
 #import "chineseCalendarViewController.h"
 #import "DZNEmptyDataSetViewController.h"
 #import "alertViewController.h"
+#import "CoreTextViewController.h"

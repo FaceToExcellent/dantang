@@ -21,7 +21,7 @@ class YZCategoryViewController: UIViewController,UITableViewDelegate,UITableView
         
         
         self.view.backgroundColor = UIColor.white
-         self.DataArray = ["FSCalendar（oc）","chineseCalendar（oc）","DZNEmptyDataSet","alertView"]
+         self.DataArray = ["FSCalendar（oc）","chineseCalendar（oc）","DZNEmptyDataSet","alertView","CoreText"]
         self.makeUI()
         
     }
@@ -82,6 +82,14 @@ class YZCategoryViewController: UIViewController,UITableViewDelegate,UITableView
             
             
             let vc = alertViewController()
+            self.navigationController!.pushViewController(vc, animated: true)
+            
+        }
+        
+        if indexPath.row==4  {
+            
+            
+            let vc = CoreTextViewController()
             self.navigationController!.pushViewController(vc, animated: true)
             
         }
