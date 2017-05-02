@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0C24837F6F744505EAB7C9D3 /* Pods_dantang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 802807CD8D981360A8130551 /* Pods_dantang.framework */; };
+		602A24521EB87AE000F05780 /* CoretextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 602A24511EB87AE000F05780 /* CoretextView.m */; };
 		603126DA1EA461D1005E3E2D /* AlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 603126D71EA461D1005E3E2D /* AlertController.m */; };
 		603126DB1EA461D1005E3E2D /* FrankAlertActionSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 603126D91EA461D1005E3E2D /* FrankAlertActionSheetView.m */; };
 		603126DF1EA4620F005E3E2D /* alertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 603126DE1EA4620F005E3E2D /* alertViewController.m */; };
@@ -76,6 +77,8 @@
 
 /* Begin PBXFileReference section */
 		0E926326B0EF69E7841E8871 /* Pods-dantang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dantang.release.xcconfig"; path = "Pods/Target Support Files/Pods-dantang/Pods-dantang.release.xcconfig"; sourceTree = "<group>"; };
+		602A24501EB87AE000F05780 /* CoretextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoretextView.h; sourceTree = "<group>"; };
+		602A24511EB87AE000F05780 /* CoretextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoretextView.m; sourceTree = "<group>"; };
 		603126D61EA461D1005E3E2D /* AlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertController.h; sourceTree = "<group>"; };
 		603126D71EA461D1005E3E2D /* AlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertController.m; sourceTree = "<group>"; };
 		603126D81EA461D1005E3E2D /* FrankAlertActionSheetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrankAlertActionSheetView.h; sourceTree = "<group>"; };
@@ -226,6 +229,8 @@
 			children = (
 				603D1E431EB04CD20022B4C4 /* CoreTextViewController.h */,
 				603D1E441EB04CD20022B4C4 /* CoreTextViewController.m */,
+				602A24501EB87AE000F05780 /* CoretextView.h */,
+				602A24511EB87AE000F05780 /* CoretextView.m */,
 			);
 			name = CoreText;
 			sourceTree = "<group>";
@@ -615,6 +620,7 @@
 				6041A8011D869479008ACDCF /* YZConst.swift in Sources */,
 				6092BA451D94D48800CC6F38 /* HomeViewCell.swift in Sources */,
 				603D6A691D9B61BE0034387B /* DantangDetailViewController.swift in Sources */,
+				602A24521EB87AE000F05780 /* CoretextView.m in Sources */,
 				6041A7FD1D8687AA008ACDCF /* YZDanTangViewController.swift in Sources */,
 				604557601EA0AF3C0030493E /* SFKRootViewController.m in Sources */,
 				604E27991D7D2D5400997864 /* YZTabbarViewController.swift in Sources */,
