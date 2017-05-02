@@ -56,7 +56,7 @@
      创建一个代理
      */
     //创建一个图片尺寸的字典，初始化代理对象需要 这里尺寸要复合比例
-    NSDictionary * dicPic = @{@"height":@238,@"width":@144.5};
+    NSDictionary * dicPic = @{@"height":@133,@"width":@190.5};
     //创建代理 __bridge既是C的结构体转换成OC对象时需要的一个修饰词
     CTRunDelegateRef delegate = CTRunDelegateCreate(& callBacks, (__bridge void *)dicPic);
 //MARK:设置结束
@@ -91,7 +91,7 @@
 //MARK:绘制文本结束
     //content-details_like_selected_16x16_
 //MARK:绘制图片
-    UIImage * image = [UIImage imageNamed:@"6"];
+    UIImage * image = [UIImage imageNamed:@"CFRun'ssuject"];
     //这里的CFFrame参见 CFFrame组成.png
     CGRect imgFrm = [self calculateImageRectWithFrame:frame];
     CGContextDrawImage(context,imgFrm, image.CGImage);
