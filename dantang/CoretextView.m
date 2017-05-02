@@ -91,10 +91,10 @@
 //MARK:绘制文本结束
     //content-details_like_selected_16x16_
 //MARK:绘制图片
-    UIImage * image = [UIImage imageNamed:@"CFRun'ssuject"];
+    _image = [UIImage imageNamed:@"CFRun'ssuject"];
     //这里的CFFrame参见 CFFrame组成.png
-    CGRect imgFrm = [self calculateImageRectWithFrame:frame];
-    CGContextDrawImage(context,imgFrm, image.CGImage);
+    _imgFrm = [self calculateImageRectWithFrame:frame];
+    CGContextDrawImage(context,_imgFrm, _image.CGImage);
 //MARK:绘制图片结束
 //MARK:释放
     CFRelease(frame);
@@ -179,5 +179,56 @@ static CGFloat widthCallBacks(void * ref)
     }
     return CGRectZero;
 }
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    UITouch * touch = [touches anyObject];
+    //获取点击位置的系统坐标
+    CGPoint location = [self systemPointFromScreenPoint:[touch locationInView:self]];
+    //检查是否点击在图片上，如果在，优先响应图片事件
+    if ([self checkIsClickOnImgWithPoint:location]) {
+        return;
+    }
+    //响应字符串事件
+     [self ClickOnStrWithPoint:location];
+}
+
+/*
+ 实际上接受所有非图片的点击事件，将字符串的每个
+ 字符取出与点击位置比较，若在范围内则点击到文字
+ ，进而检测对应的文字是否响应事件，若存在响应
+ */
+-(void)ClickOnStrWithPoint:(CGPoint)location
+{
+  //MARK:暂时不写 累了
+}
+/*
+ 遍历图片frame的数组与点击位置比较，如果在
+ 范围内则响应的数组中取出对应响应并执行，返
+ 回yes，否则返回no
+ */
+-(BOOL)checkIsClickOnImgWithPoint:(CGPoint)location
+{
+    if ([self isFrame:_imgFrm containsPoint:location]) {
+    NSLog(@"您点击到了图片");
+    return YES;
+}
+    return NO;
+    
+}
+///点包含检测
+-(BOOL)isFrame:(CGRect)frame containsPoint:(CGPoint)point
+{
+    //传入系统坐标系下的frame
+    return CGRectContainsPoint(frame, point);
+}
+/*
+ 将屏幕坐标转换为系统坐标
+ */
+-(CGPoint)systemPointFromScreenPoint:(CGPoint)origin
+{
+    return CGPointMake(origin.x, self.bounds.size.height - origin.y);
+}
+
 
 @end
