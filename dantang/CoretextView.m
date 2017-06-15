@@ -33,7 +33,7 @@
      事实上，图文混排就是在要插入图片的位置插入一个富文本类型的占位符。通过CTRUNDelegate设置图片
      */
     //用来插入的富文本
-    NSMutableAttributedString * attributeStr = [[NSMutableAttributedString alloc] initWithString:@"\n这里在测试图文混排，\n我是一个富文本"];
+    _attributeStr = [[NSMutableAttributedString alloc] initWithString:@"\n这里在测试图文混排，\n我是一个富文本"];
     //MARK:需要一个回调结构体
     /*
      设置一个回调结构体，告诉代理该回调那些方法
@@ -73,31 +73,31 @@
     //释放（__bridge进行C与OC数据类型的转换，C为非ARC，需要手动管理）
     CFRelease(delegate);
     //将占位符插入原富文本
-    [attributeStr insertAttributedString:placeHolderAttrStr atIndex:12];
+    [_attributeStr insertAttributedString:placeHolderAttrStr atIndex:12];
 //MARK:插入结束
 //MARK:先绘制文本
     //一个frame的工厂，负责生成frame
-    CTFramesetterRef frameSetter = CTFramesetterCreateWithAttributedString((CFAttributedStringRef)attributeStr);
+    CTFramesetterRef frameSetter = CTFramesetterCreateWithAttributedString((CFAttributedStringRef)_attributeStr);
     //创建绘制区域
     CGMutablePathRef path = CGPathCreateMutable();
     //添加绘制尺寸
     CGPathAddRect(path, NULL, self.bounds);
-    NSInteger length = attributeStr.length;
+    NSInteger length = _attributeStr.length;
     //工厂根据绘制区域及富文本（可选范围，多次设置）设置frame
     //frame即为全部文本的frame 一定要搞清楚全部与指定范围获取的frame他们都是从左上角开始的
-    CTFrameRef frame = CTFramesetterCreateFrame(frameSetter, CFRangeMake(0, length), path, NULL);
+    _ctframe = CTFramesetterCreateFrame(frameSetter, CFRangeMake(0, length), path, NULL);
     //根据frame绘制文字
-    CTFrameDraw(frame, context);
+    CTFrameDraw(_ctframe, context);
 //MARK:绘制文本结束
     //content-details_like_selected_16x16_
 //MARK:绘制图片
     _image = [UIImage imageNamed:@"CFRun'ssuject"];
     //这里的CFFrame参见 CFFrame组成.png
-    _imgFrm = [self calculateImageRectWithFrame:frame];
+    _imgFrm = [self calculateImageRectWithFrame:_ctframe];
     CGContextDrawImage(context,_imgFrm, _image.CGImage);
 //MARK:绘制图片结束
 //MARK:释放
-    CFRelease(frame);
+    CFRelease(_ctframe);
     CFRelease(path);
     CFRelease(frameSetter);
 }
@@ -180,6 +180,10 @@ static CGFloat widthCallBacks(void * ref)
     return CGRectZero;
 }
 
+
+
+
+//MARK:点击事件操作
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     UITouch * touch = [touches anyObject];
@@ -190,7 +194,9 @@ static CGFloat widthCallBacks(void * ref)
         return;
     }
     //响应字符串事件
-     [self ClickOnStrWithPoint:location];
+    //MARK:响应字符串有错误
+    
+   //  [self ClickOnStrWithPoint:location];
 }
 
 /*
@@ -200,7 +206,98 @@ static CGFloat widthCallBacks(void * ref)
  */
 -(void)ClickOnStrWithPoint:(CGPoint)location
 {
-  //MARK:暂时不写 累了
+    //获取所有CTLine
+    NSArray * lines = (NSArray *)CTFrameGetLines(_ctframe);
+    //初始化范围数组
+    CFRange ranges[lines.count];
+    //初始化原点数组
+    CGPoint origins[lines.count];
+    //获取所有CTLine的原点
+    CTFrameGetLineOrigins(_ctframe, CFRangeMake(0, 0), origins);
+    //获取所有CTLine的Range
+    for (int i = 0; i < lines.count; i ++) {
+        CTLineRef line = (__bridge CTLineRef)lines[i];
+        CFRange range = CTLineGetStringRange(line);
+        ranges[i] = range;
+    }
+    //逐字检查
+    for (int i = 0; i < _attributeStr.length; i ++) {
+        long maxLoc;
+        int lineNum;
+        //获取对应字符所在CTLine的index
+        for (int j = 0; j < lines.count; j ++) {
+            CFRange range = ranges[j];
+            maxLoc = range.location + range.length - 1;
+            if (i <= maxLoc) {
+                lineNum = j;
+                break;
+            }
+        }
+        //取到字符对应的CTLine
+        CTLineRef line = (__bridge CTLineRef)lines[lineNum];
+        CGPoint origin = origins[lineNum];
+        //计算对应字符的frame
+        CGRect CTRunFrame = [self frameForCTRunWithIndex:i CTLine:line origin:origin];
+        //如果点击位置在字符范围内，响应时间，跳出循环
+        if ([self isFrame:CTRunFrame containsPoint:location]) {
+            //点击到文字，然而没有响应的处理。可以做其他处理
+            NSLog(@"您点击到了第 %d 个字符，位于第 %d 行，然而他没有响应事件。",i,lineNum + 1);//点击到文字，然而没有响应的处理。可以做其他处理
+            return;
+        }
+    }
+    //没有点击到文字，可以做其他处理
+    NSLog(@"您没有点击到文字");
+}
+
+///字符frame计算
+/*
+ 返回索引字符的frame
+ 
+ index：索引
+ line：索引字符所在CTLine
+ origin：line的起点
+ */
+-(CGRect)frameForCTRunWithIndex:(NSInteger)index
+                         CTLine:(CTLineRef)line
+                         origin:(CGPoint)origin
+{
+    //获取字符起点相对于CTLine的原点的偏移量
+    CGFloat offsetX = CTLineGetOffsetForStringIndex(line, index, NULL);
+    //获取下一个字符的偏移量，两者之间即为字符X范围
+    CGFloat offsexX2 = CTLineGetOffsetForStringIndex(line, index + 1, NULL);
+    //坐标转换，将点的CTLine坐标转换至系统坐标
+    offsetX += origin.x;
+    offsexX2 += origin.x;
+    //取到CTLine的起点Y
+    CGFloat offsetY = origin.y;
+    //初始化上下边距的变量
+    CGFloat lineAscent;
+    CGFloat lineDescent;
+    //获取所有CTRun
+    NSArray * runs = (__bridge NSArray *)CTLineGetGlyphRuns(line);
+    CTRunRef runCurrent;
+    //获取当前点击的CTRun
+    for (int k = 0; k < runs.count; k ++) {
+        CTRunRef run = (__bridge CTRunRef)runs[k];
+        CFRange range = CTRunGetStringRange(run);
+        NSRange rangeOC = NSMakeRange(range.location, range.length);
+        if ([self isIndex:index inRange:rangeOC]) {
+            runCurrent = run;
+            break;
+        }
+    }
+    //计算当前点击的CTRun高度
+    CTRunGetTypographicBounds(runCurrent, CFRangeMake(0, 0), &lineAscent, &lineDescent, NULL);
+    CGFloat height = lineAscent + lineDescent;
+    //返回一个字符的Frame
+    return CGRectMake(offsetX, offsetY, offsexX2 - offsetX, height);
+}
+-(BOOL)isIndex:(NSInteger)index inRange:(NSRange)range
+{
+    if ((index <= range.location + range.length - 1) && (index >= range.location)) {
+        return YES;
+    }
+    return NO;
 }
 /*
  遍历图片frame的数组与点击位置比较，如果在

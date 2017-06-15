@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <CoreText/CoreText.h>
 @interface CoretextView : UIView
 @property(nonatomic,strong)UIImage * image;
 @property(nonatomic) CGRect imgFrm;
+@property(nonatomic)NSMutableAttributedString * attributeStr;
+@property(nonatomic)CTFrameRef ctframe;
 @end
