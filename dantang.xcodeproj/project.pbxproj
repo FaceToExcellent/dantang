@@ -24,6 +24,14 @@
 		6041A7FF1D86895D008ACDCF /* YZNAVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041A7FE1D86895D008ACDCF /* YZNAVViewController.swift */; };
 		6041A8011D869479008ACDCF /* YZConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041A8001D869479008ACDCF /* YZConst.swift */; };
 		604362A51DB85B640012735C /* YZPDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604362A41DB85B640012735C /* YZPDetailViewController.swift */; };
+		604437101F21A189001DDB2F /* CoreText2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6044370F1F21A189001DDB2F /* CoreText2ViewController.swift */; };
+		604437131F21A245001DDB2F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 604437121F21A245001DDB2F /* CoreText.framework */; };
+		604437151F21A26D001DDB2F /* CTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604437141F21A26D001DDB2F /* CTView.swift */; };
+		6044371B1F21A8F6001DDB2F /* zombie1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 604437171F21A8F6001DDB2F /* zombie1.jpg */; };
+		6044371C1F21A8F6001DDB2F /* zombie2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 604437181F21A8F6001DDB2F /* zombie2.jpg */; };
+		6044371D1F21A8F6001DDB2F /* zombie3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 604437191F21A8F6001DDB2F /* zombie3.jpg */; };
+		6044371E1F21A8F6001DDB2F /* zombies.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6044371A1F21A8F6001DDB2F /* zombies.txt */; };
+		604437201F21A949001DDB2F /* MarkupParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6044371F1F21A949001DDB2F /* MarkupParser.swift */; };
 		604557601EA0AF3C0030493E /* SFKRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6045575F1EA0AF3C0030493E /* SFKRootViewController.m */; };
 		60486E101E51609400204142 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60486E0F1E51609400204142 /* SwiftyJSON.framework */; };
 		604A36D41D8E3113007B2FF1 /* Homemodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604A36D31D8E3113007B2FF1 /* Homemodel.swift */; };
@@ -102,6 +110,14 @@
 		6041A7FE1D86895D008ACDCF /* YZNAVViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZNAVViewController.swift; sourceTree = "<group>"; };
 		6041A8001D869479008ACDCF /* YZConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZConst.swift; sourceTree = "<group>"; };
 		604362A41DB85B640012735C /* YZPDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZPDetailViewController.swift; sourceTree = "<group>"; };
+		6044370F1F21A189001DDB2F /* CoreText2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreText2ViewController.swift; sourceTree = "<group>"; };
+		604437121F21A245001DDB2F /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		604437141F21A26D001DDB2F /* CTView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTView.swift; sourceTree = "<group>"; };
+		604437171F21A8F6001DDB2F /* zombie1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = zombie1.jpg; sourceTree = "<group>"; };
+		604437181F21A8F6001DDB2F /* zombie2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = zombie2.jpg; sourceTree = "<group>"; };
+		604437191F21A8F6001DDB2F /* zombie3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = zombie3.jpg; sourceTree = "<group>"; };
+		6044371A1F21A8F6001DDB2F /* zombies.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = zombies.txt; sourceTree = "<group>"; };
+		6044371F1F21A949001DDB2F /* MarkupParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkupParser.swift; sourceTree = "<group>"; };
 		6045575E1EA0AF3C0030493E /* SFKRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFKRootViewController.h; sourceTree = "<group>"; };
 		6045575F1EA0AF3C0030493E /* SFKRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFKRootViewController.m; sourceTree = "<group>"; };
 		60486E0F1E51609400204142 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../Library/Developer/Xcode/DerivedData/dantang-eohokgepeedoongbscuphlkiaomj/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
@@ -144,6 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				604437131F21A245001DDB2F /* CoreText.framework in Frameworks */,
 				60486E101E51609400204142 /* SwiftyJSON.framework in Frameworks */,
 				0C24837F6F744505EAB7C9D3 /* Pods_dantang.framework in Frameworks */,
 			);
@@ -155,6 +172,7 @@
 		1F035194EF1179120DC0F421 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				604437121F21A245001DDB2F /* CoreText.framework */,
 				60486E0F1E51609400204142 /* SwiftyJSON.framework */,
 				802807CD8D981360A8130551 /* Pods_dantang.framework */,
 			);
@@ -231,8 +249,23 @@
 				603D1E441EB04CD20022B4C4 /* CoreTextViewController.m */,
 				602A24501EB87AE000F05780 /* CoretextView.h */,
 				602A24511EB87AE000F05780 /* CoretextView.m */,
+				604437161F21A8F5001DDB2F /* zombieMagMaterials */,
+				6044370F1F21A189001DDB2F /* CoreText2ViewController.swift */,
+				604437141F21A26D001DDB2F /* CTView.swift */,
+				6044371F1F21A949001DDB2F /* MarkupParser.swift */,
 			);
 			name = CoreText;
+			sourceTree = "<group>";
+		};
+		604437161F21A8F5001DDB2F /* zombieMagMaterials */ = {
+			isa = PBXGroup;
+			children = (
+				604437171F21A8F6001DDB2F /* zombie1.jpg */,
+				604437181F21A8F6001DDB2F /* zombie2.jpg */,
+				604437191F21A8F6001DDB2F /* zombie3.jpg */,
+				6044371A1F21A8F6001DDB2F /* zombies.txt */,
+			);
+			path = zombieMagMaterials;
 			sourceTree = "<group>";
 		};
 		604A36D21D8E30FB007B2FF1 /* M */ = {
@@ -540,8 +573,12 @@
 			files = (
 				604E26F11D7D279800997864 /* Assets.xcassets in Resources */,
 				604E27011D7D281600997864 /* Default-667h@2x.png in Resources */,
+				6044371E1F21A8F6001DDB2F /* zombies.txt in Resources */,
 				604E27001D7D281600997864 /* Default-568h@2x.png in Resources */,
 				604E27021D7D281600997864 /* Default-736h@3x.png in Resources */,
+				6044371C1F21A8F6001DDB2F /* zombie2.jpg in Resources */,
+				6044371B1F21A8F6001DDB2F /* zombie1.jpg in Resources */,
+				6044371D1F21A8F6001DDB2F /* zombie3.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,6 +646,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				604A36D41D8E3113007B2FF1 /* Homemodel.swift in Sources */,
+				604437101F21A189001DDB2F /* CoreText2ViewController.swift in Sources */,
 				60C736131DB5F8270011DB71 /* giftModel.swift in Sources */,
 				603A6C321E8D1370003D8D81 /* DZNEmptyDataSetViewController.m in Sources */,
 				603126DF1EA4620F005E3E2D /* alertViewController.m in Sources */,
@@ -632,6 +670,8 @@
 				606095BE1E8A0A720015D0F1 /* FSCalendarViewController.m in Sources */,
 				60EF62E51DC4D52600E25472 /* pOwView.swift in Sources */,
 				603126DB1EA461D1005E3E2D /* FrankAlertActionSheetView.m in Sources */,
+				604437201F21A949001DDB2F /* MarkupParser.swift in Sources */,
+				604437151F21A26D001DDB2F /* CTView.swift in Sources */,
 				604E26EA1D7D279800997864 /* AppDelegate.swift in Sources */,
 				603D1E451EB04CD20022B4C4 /* CoreTextViewController.m in Sources */,
 				60C736151DB5F8830011DB71 /* giftInnerModel.swift in Sources */,

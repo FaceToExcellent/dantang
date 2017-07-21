@@ -89,7 +89,7 @@ class YZCategoryViewController: UIViewController,UITableViewDelegate,UITableView
         if indexPath.row==4  {
             
             
-            let vc = CoreTextViewController()
+            let vc = CoreText2ViewController()
             self.navigationController!.pushViewController(vc, animated: true)
             
         }
