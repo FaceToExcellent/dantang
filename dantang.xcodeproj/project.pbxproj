@@ -31,7 +31,6 @@
 		6044371C1F21A8F6001DDB2F /* zombie2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 604437181F21A8F6001DDB2F /* zombie2.jpg */; };
 		6044371D1F21A8F6001DDB2F /* zombie3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 604437191F21A8F6001DDB2F /* zombie3.jpg */; };
 		6044371E1F21A8F6001DDB2F /* zombies.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6044371A1F21A8F6001DDB2F /* zombies.txt */; };
-		604437201F21A949001DDB2F /* MarkupParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6044371F1F21A949001DDB2F /* MarkupParser.swift */; };
 		604557601EA0AF3C0030493E /* SFKRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6045575F1EA0AF3C0030493E /* SFKRootViewController.m */; };
 		60486E101E51609400204142 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60486E0F1E51609400204142 /* SwiftyJSON.framework */; };
 		604A36D41D8E3113007B2FF1 /* Homemodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604A36D31D8E3113007B2FF1 /* Homemodel.swift */; };
@@ -117,7 +116,6 @@
 		604437181F21A8F6001DDB2F /* zombie2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = zombie2.jpg; sourceTree = "<group>"; };
 		604437191F21A8F6001DDB2F /* zombie3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = zombie3.jpg; sourceTree = "<group>"; };
 		6044371A1F21A8F6001DDB2F /* zombies.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = zombies.txt; sourceTree = "<group>"; };
-		6044371F1F21A949001DDB2F /* MarkupParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkupParser.swift; sourceTree = "<group>"; };
 		6045575E1EA0AF3C0030493E /* SFKRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFKRootViewController.h; sourceTree = "<group>"; };
 		6045575F1EA0AF3C0030493E /* SFKRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFKRootViewController.m; sourceTree = "<group>"; };
 		60486E0F1E51609400204142 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../Library/Developer/Xcode/DerivedData/dantang-eohokgepeedoongbscuphlkiaomj/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
@@ -252,7 +250,6 @@
 				604437161F21A8F5001DDB2F /* zombieMagMaterials */,
 				6044370F1F21A189001DDB2F /* CoreText2ViewController.swift */,
 				604437141F21A26D001DDB2F /* CTView.swift */,
-				6044371F1F21A949001DDB2F /* MarkupParser.swift */,
 			);
 			name = CoreText;
 			sourceTree = "<group>";
@@ -670,7 +667,6 @@
 				606095BE1E8A0A720015D0F1 /* FSCalendarViewController.m in Sources */,
 				60EF62E51DC4D52600E25472 /* pOwView.swift in Sources */,
 				603126DB1EA461D1005E3E2D /* FrankAlertActionSheetView.m in Sources */,
-				604437201F21A949001DDB2F /* MarkupParser.swift in Sources */,
 				604437151F21A26D001DDB2F /* CTView.swift in Sources */,
 				604E26EA1D7D279800997864 /* AppDelegate.swift in Sources */,
 				603D1E451EB04CD20022B4C4 /* CoreTextViewController.m in Sources */,
